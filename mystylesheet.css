@@ -131,7 +131,8 @@ ul
 img.default_pic
 {
         box-shadow:5px 5px 5px #888888;
-        max-width:240px;
+        max-width:60%;
+        max-height:60%;
         border:10px;
         position: absolute; 
 }
@@ -143,7 +144,7 @@ div.homepage_text
 {
         padding: 40px;
         text-align:center;
-        text-indent: 400px;
+        margin-left: 400px;
 }
 
 /* RESUME */
