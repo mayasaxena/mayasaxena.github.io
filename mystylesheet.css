@@ -27,6 +27,12 @@ h1
         padding:0;
 }
 
+h1.header_text
+{
+        color:#FEFEFE;
+        text-shadow:1px 1px 3px #888888;
+}
+
 
 nav
 {
@@ -61,6 +67,8 @@ nav ul li a
         display:block;
         height:40px;
         line-height:40px;
+        color:#FEFEFE;
+        text-shadow:1px 1px 3px #888888;
         text-decoration:none;
         text-align:center;
         vertical-align:middle;
@@ -69,4 +77,49 @@ nav ul li a
 a:hover,a:active
 {
         background-color:#339999;
+}
+
+div.home_page
+{
+        padding: 40px;
+        text-align:center;
+        text-indent: 320px;
+}
+
+div.resume
+{
+        margin-top:60px;
+        margin-left:auto;
+        margin-right:auto;
+        width:70%;
+}
+
+
+img.default_pic
+{
+        box-shadow:5px 5px 5px #888888;
+        max-width:240px;
+        max-height:auto;
+        border:10px;
+        padding:0px;
+        margin-top: 40px; 
+        margin-left:80px; 
+        position: absolute;
+}
+
+span.bold
+{
+        font-weight:bold;
+}
+
+div.info
+{
+        font-size:14px;
+        text-indent:5%;
+}
+
+
+h4
+{
+        text-indent:20px;
 }
