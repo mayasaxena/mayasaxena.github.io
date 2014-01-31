@@ -3,9 +3,11 @@ body
 {
         margin:0;
         padding:0;
-        background-color:#CCFFCC;
+        background-color:#CCFFC8;
         font-family: Helvetica, Arial, sans-serif;
 }
+
+/* HEADER */
 
 header
 {
@@ -17,8 +19,6 @@ header
         line-height:120px;
         width:100%;
 
-        text-align:center;
-        vertical-align:middle;
 }
 
 h1
@@ -30,9 +30,15 @@ h1
 h1.header_text
 {
         color:#FEFEFE;
+        padding-left:60px;
         text-shadow:1px 1px 3px #888888;
+        text-align:left;
+        vertical-align:middle;
+
 }
 
+
+/* NAVBAR */
 
 nav
 {
@@ -42,13 +48,11 @@ nav
 
 }
 
-
 nav ul
 {
         font-size:16px;
-        margin:0;
-        padding:0;
         list-style:none;
+        margin:0;
 
 }
 
@@ -79,20 +83,49 @@ a:hover,a:active
         background-color:#339999;
 }
 
-div.home_page
-{
-        padding: 40px;
-        text-align:center;
-        text-indent: 320px;
-}
+/* ALL PAGES */
 
-div.resume
+div.main
 {
-        margin-top:60px;
-        margin-left:auto;
-        margin-right:auto;
+        margin:60px;
         width:70%;
 }
+
+h3
+{
+        background-color:#33CCCC;
+        padding:5px;
+        color:#FEFEFE;
+        text-shadow:1px 1px 3px #888888;
+        font-weight:normal;
+}
+
+
+span.bold
+{
+        font-weight:bold;
+
+}
+
+p
+{
+        font-size:14px;
+        font-weight:normal;
+        margin-left:0;
+        padding-left:5%;
+ }
+
+ul
+{
+        font-size:14px;
+        font-weight:normal;
+        margin-left:0;
+        padding-left:10%;
+}
+
+
+/* HOMEPAGE */
+
 
 
 img.default_pic
@@ -101,25 +134,28 @@ img.default_pic
         max-width:240px;
         max-height:auto;
         border:10px;
-        padding:0px;
-        margin-top: 40px; 
-        margin-left:80px; 
-        position: absolute;
+        position: absolute; 
 }
 
-span.bold
+
+
+
+div.homepage_text
 {
-        font-weight:bold;
+        padding: 40px;
+        text-align:center;
+        text-indent: 400px;
 }
 
-div.info
-{
-        font-size:14px;
-        text-indent:5%;
-}
+/* RESUME */
 
 
-h4
-{
-        text-indent:20px;
-}
+
+
+
+
+
+
+
+
+
