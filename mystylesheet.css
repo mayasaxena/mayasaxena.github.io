@@ -132,7 +132,6 @@ img.default_pic
 {
         box-shadow:5px 5px 5px #888888;
         max-width:240px;
-        max-height:auto;
         border:10px;
         position: absolute; 
 }
