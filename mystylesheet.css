@@ -1,11 +1,27 @@
+html, body {
+min-height: 100%;
+height: auto;    
+}
 
 body
 {
         margin:0;
         padding:0;
-        background-color:#CCFFC8;
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+
 }
+
+#gradient
+{
+
+/* fallback */
+        background-color: #CCFFC8;
+        background: -webkit-gradient(linear, center top, center bottom, from(#CCFFC8), to(#A8F5A2));
+
+        
+}
+
 
 /* HEADER */
 
@@ -13,11 +29,12 @@ header
 {
         margin:0;
         padding:0;
-        background-color:#66FFCC;
         
         height:120px;
         line-height:120px;
         width:100%;
+
+        background-color:#66FFCC;
 
 }
 
@@ -42,9 +59,13 @@ h1.header_text
 
 nav
 {
-        background-color:#33CCCC;
         height:40px;
         width:100%;
+
+        background-color:#33CCCC;       
+        background: -webkit-gradient(linear, center top, center bottom, from(#33CCCC), to(#1AB0B0));
+
+        
 
 }
 
