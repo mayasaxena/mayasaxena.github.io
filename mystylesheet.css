@@ -4,15 +4,16 @@
         padding:0;
 }
 
-html, body {
-min-height: 100%;
-height: auto;    
+html, body 
+{
+        min-height: 100%;
+        height: auto;
 
 }
 
 body
 {
-        font-size:14pt;
+        font-size:12pt;
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 
@@ -42,13 +43,14 @@ header
 }
 
 
-h1.header_text
+h1 a
 {
         color:#FEFEFE;
         padding-left:60px;
         text-shadow:1px 1px 3px #888888;
         text-align:left;
         vertical-align:middle;
+        text-decoration: none;
 
 }
 
@@ -77,17 +79,17 @@ nav ul
 nav li a
 {
         float:left;
-        width:33.3%;
+        width:25%;
         display:block;
         padding-top: .33em;
         padding-bottom: .33em;
 
-        font-size:1em;
         color:#FEFEFE;
         text-shadow:1px 1px 3px #888888;
         text-decoration:none;
         text-align:center;
         vertical-align:middle;
+        font-size: 14pt;
 }
 
 nav a:hover, nav a:active
@@ -97,8 +99,10 @@ nav a:hover, nav a:active
 
 /* ALL PAGES */
 
+
 div.main
 {
+
         margin:60px;
         width:70%;
 }
@@ -110,6 +114,8 @@ h3
         color:#FEFEFE;
         text-shadow:1px 1px 3px #888888;
         font-weight:normal;
+        border-radius: 5px;
+        font-size: 14pt;
 }
 
 
@@ -121,15 +127,15 @@ span.bold
 
 p
 {
-        font-size:14px;
         font-weight:normal;
         margin:20px;
+        font-size: 12pt;
  }
 
 .main ul
 {
-        font-size:14px;
         font-weight:normal;
+        font-size: 12pt;
         margin:20px;
         padding-left:10%;
 }
@@ -145,7 +151,8 @@ img.default_pic
         max-width:60%;
         max-height:60%;
         border:10px;
-        position: absolute; 
+        position: absolute;
+        border-radius: 5px;
 }
 
 
@@ -155,10 +162,12 @@ div.homepage_text
 {
         padding:40px;
         text-align:center;
-        margin-left:75%;
+        margin-left:70%;
 }
 
-/* RESUME */
+/* PORTFOLIO */
+
+
 
 
 

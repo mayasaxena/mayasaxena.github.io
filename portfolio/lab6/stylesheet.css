@@ -1,0 +1,51 @@
+html, body {
+
+        font-size: 12pt;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1, h3 {
+        font-family: 'Flamenco', cursive;
+        text-align: center;
+}
+
+h3 {
+        font-size: 10pt;
+}
+
+p {
+        max-width:60%;
+        font-family: 'Gafata', sans-serif;
+        padding:10px;
+        margin:20px;
+        background-color: #A3EDF4;
+        border-radius: 10px;
+        margin-left: 20%;
+}
+
+div.extra {
+        display: none;
+}
+
+p:hover {
+        font-size: 14pt;
+        background-color: #3AAFBA;
+        max-width:60%;
+        width:60%;
+}
+
+p:hover div.extra {
+        
+        display: block;
+        margin: 10px;
+
+}
+
+p:hover .main {
+        display: none;  
+}
+
+p:hover .comp {
+        font-size: 20pt;
+        padding: 2px;
+}
