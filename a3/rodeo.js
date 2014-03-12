@@ -1,8 +1,8 @@
 var request;
 var mbta;
-var myLat;
-var myLong;
-var myLoc = new google.maps.LatLng(myLat, myLng);
+var myLat = 0;
+var myLong = 0;
+var myLoc = new google.maps.LatLng(myLat, myLong);
 var myOptions = {
                         zoom: 13, // The larger the zoom number, the bigger the zoom
                         center: myLoc,
@@ -18,6 +18,7 @@ var stations;
 function init() {
         mbta = new XMLHttpRequest();
         mbta.open("GET", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true);
+        map = newXMLHttpRequest();
         map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
         getMyLocation();
 
