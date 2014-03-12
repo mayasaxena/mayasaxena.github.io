@@ -72,6 +72,6 @@ function dataReady() {
         if(mbta.readyState == 4) {
                 alert("ready");
                 schedule = JSON.parse(mbta.responseText);
-                alert(schedule);
+                console.log(schedule[line]);
         }
 }
