@@ -23,7 +23,13 @@ function init() {
         getMyLocation();
 
 
+        mbta.onreadystatechange = dataReady; //rval has to be a function
+        mbta.send(null);
+
+
 }
+
+
 
 function getMyLocation()
 {
@@ -59,4 +65,12 @@ function renderMap()
         });
                 
         marker.setMap(map);
+}
+
+function dataReady() {
+
+        if(mbta.readyState == 4) {
+                schedule = JSON.parse(mbta.responseText);
+                console.log(schedule);
+        }
 }
