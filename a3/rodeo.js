@@ -71,3 +71,9 @@ function dataReady() {
                 schedule = JSON.parse(mbta.responseText);
         }
 }
+
+var fr = new FileReader();
+fr.onload = function(e) {
+    alert(e.target.result);
+};
+fr.readAsText("stations.csv");
