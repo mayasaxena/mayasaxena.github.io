@@ -13,7 +13,7 @@ var marker;
 var infowindow = new google.maps.InfoWindow();
 var line;
 
-str = "Blue,Airport,42.374262,-71.030395
+var str = "Blue,Airport,42.374262,-71.030395
 Blue,Aquarium,42.359784,-71.051652
 Blue,Beachmont,42.39754234,-70.99231944
 Blue,Bowdoin,42.361365,-71.062037
