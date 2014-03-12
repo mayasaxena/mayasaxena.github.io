@@ -70,7 +70,8 @@ function renderMap()
 function dataReady() {
 
         if(mbta.readyState == 4) {
+                alert("ready");
                 schedule = JSON.parse(mbta.responseText);
-                console.log(schedule);
+                alert(schedule);
         }
 }
