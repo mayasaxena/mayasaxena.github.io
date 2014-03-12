@@ -13,10 +13,6 @@ var marker;
 var infowindow = new google.maps.InfoWindow();
 var line;
 
-var stations = "stations.csv".toObjects();
-alert(stations[0]);
-
-
 
 function init() {
         mbta = new XMLHttpRequest();
