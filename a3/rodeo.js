@@ -12,7 +12,7 @@ var map;
 var marker;
 var infowindow = new google.maps.InfoWindow();
 var line;
-
+/*
 var str = "Blue,Airport,42.374262,-71.030395
 Blue,Aquarium,42.359784,-71.051652
 Blue,Beachmont,42.39754234,-70.99231944
@@ -70,7 +70,7 @@ Red,Wollaston,42.2665139,-71.0203369"
 
 var stations = str.split("\n");
 
-console.log(stations[0]);
+console.log(stations[0]);*/
 
 
 function init() {
