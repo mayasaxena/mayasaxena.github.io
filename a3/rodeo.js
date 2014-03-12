@@ -14,7 +14,7 @@ var infowindow = new google.maps.InfoWindow();
 var line;
 
 var stations = "stations.csv".toObjects();
-console.log(stations[0]);
+alert(stations[0]);
 
 
 
@@ -73,6 +73,5 @@ function dataReady() {
 
         if(mbta.readyState == 4) {
                 schedule = JSON.parse(mbta.responseText);
-                console.log(schedule);
         }
 }
