@@ -18,7 +18,7 @@ var stations;
 function init() {
         mbta = new XMLHttpRequest();
         mbta.open("GET", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true);
-        map = newXMLHttpRequest();
+        request = new XMLHttpRequest();
         map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
         getMyLocation();
 
