@@ -52,5 +52,11 @@ function renderMap()
                 title: "Current Location"
         });
         marker.setMap(map);
+
+        // Open info window on click of marker
+        google.maps.event.addListener(marker, 'click', function() {
+                infowindow.setContent(marker.title);
+                infowindow.open(map, marker);
+        });
                 
 }
