@@ -51,7 +51,6 @@ function renderMap()
                 position: myLoc,
                 title: "Current Location"
         });
-        marker.setMap(map);
 
         // Open info window on click of marker
         google.maps.event.addListener(marker, 'click', function() {
@@ -59,4 +58,5 @@ function renderMap()
                 infowindow.open(map, marker);
         });
                 
+        marker.setMap(map);
 }
