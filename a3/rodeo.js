@@ -13,7 +13,21 @@ var marker;
 var infowindow = new google.maps.InfoWindow();
 var line;
 
-var str = "Blue,Airport,42.374262,-71.030395
+
+
+function init() {
+        mbta = new XMLHttpRequest();
+        mbta.open("GET", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true);
+        request = new XMLHttpRequest();
+        map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+        getMyLocation();
+
+
+        mbta.onreadystatechange = dataReady; //rval has to be a function
+        mbta.send(null);
+
+
+        var str = "Blue,Airport,42.374262,-71.030395
 Blue,Aquarium,42.359784,-71.051652
 Blue,Beachmont,42.39754234,-70.99231944
 Blue,Bowdoin,42.361365,-71.062037
@@ -70,19 +84,6 @@ Red,Wollaston,42.2665139,-71.0203369"
 
 var stations = str.split(",");
 alert(stations[0]);
-
-
-function init() {
-        mbta = new XMLHttpRequest();
-        mbta.open("GET", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true);
-        request = new XMLHttpRequest();
-        map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-        getMyLocation();
-
-
-        mbta.onreadystatechange = dataReady; //rval has to be a function
-        mbta.send(null);
-
 
 }
 
