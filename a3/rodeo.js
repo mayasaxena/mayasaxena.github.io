@@ -13,6 +13,9 @@ var marker;
 var infowindow = new google.maps.InfoWindow();
 var line;
 
+var stations = "stations.csv".toObjects();
+console.log(stations[0]);
+
 
 
 function init() {
