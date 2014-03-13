@@ -21,7 +21,6 @@ function init() {
         map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
         getMyLocation();
         readCSV("stations.csv");
-
         mbta.onreadystatechange = dataReady; //rval has to be a function
         mbta.send(null);
 
@@ -37,8 +36,7 @@ function readCSV(file)
         {
             if(rawFile.status === 200 || rawFile.status == 0)
             {
-                stations = rawFile.responseText;
-                console.log(stations);
+                stations = JSON.parse(rawFile.responseText);
             }
         }
     }
