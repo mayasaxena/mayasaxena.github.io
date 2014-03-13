@@ -20,14 +20,14 @@ function init() {
         request = new XMLHttpRequest();
         map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
         getMyLocation();
-        readTextFile("stations.csv");
+        readCSV("stations.csv");
 
         mbta.onreadystatechange = dataReady; //rval has to be a function
         mbta.send(null);
 
 }
 
-function readTextFile(file)
+function readCSV(file)
 {
     var rawFile = new XMLHttpRequest();
     rawFile.open("GET", file, true);
@@ -42,7 +42,7 @@ function readTextFile(file)
             }
         }
     }
-    //rawFile.send(null);
+    rawFile.send(null);
 }
 
 
