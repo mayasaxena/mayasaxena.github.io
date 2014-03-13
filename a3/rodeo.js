@@ -24,13 +24,15 @@ function init() {
         request = new XMLHttpRequest();
         map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
         getMyLocation();
-        readCSV();
+        readStations();
         mbta.onreadystatechange = dataReady; //rval has to be a function
         mbta.send(null);
 
+        alert(schedule[line]);
+
 }
 
-function readCSV()
+function readStations()
 {
     stations = ["Blue,Airport,42.374262,-71.030395",
                 "Blue,Aquarium,42.359784,-71.051652",
@@ -99,8 +101,6 @@ function readCSV()
         }
     }
 
-    console.log(redLine);
-
 }
 
 function getMyLocation()
@@ -137,6 +137,7 @@ function renderMap()
         });
                 
         marker.setMap(map);
+
 }
 
 function dataReady() {
