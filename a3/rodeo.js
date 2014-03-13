@@ -145,5 +145,4 @@ function dataReady() {
                 schedule = JSON.parse(mbta.responseText);
         }
 
-        alert(schedule["line"]);
 }
