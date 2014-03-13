@@ -14,6 +14,9 @@ var infowindow = new google.maps.InfoWindow();
 var line;
 var stationstr;
 var stations;
+var redLine;
+var orangeLine;
+var blueLine;
 
 function init() {
         mbta = new XMLHttpRequest();
@@ -85,9 +88,18 @@ function readCSV()
 
     for (var i = stations.length - 1; i >= 0; i--) {
         stations[i] = stations[i].split(",");
+        if(stations[i][0] == "Blue") {
+            blueLine.push(stations[i]);
+        }
+        else if(stations[i][0] == "Orange") {
+            orangeLine.push(stations[i]);
+        }
+        else if(stations[i][0] == "Red") {
+            redLine.push(stations[i]);
+        }
     }
 
-    console.log(stations[22][0]);
+    console.log(redLine);
 
 }
 
