@@ -12,7 +12,7 @@ var map;
 var marker;
 var infowindow = new google.maps.InfoWindow();
 var line;
-
+var stations;
 
 function init() {
         mbta = new XMLHttpRequest();
@@ -37,8 +37,8 @@ function readCSV(file)
         {
             if(rawFile.status === 200 || rawFile.status == 0)
             {
-                var allText = rawFile.responseText;
-                console.log(allText);
+                stations = rawFile.responseText;
+                console.log(stations);
             }
         }
     }
