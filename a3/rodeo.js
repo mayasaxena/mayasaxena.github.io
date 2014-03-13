@@ -29,8 +29,6 @@ function init() {
         mbta.onreadystatechange = dataReady; //rval has to be a function
         mbta.send(null);
 
-        alert(schedule["line"]);
-
 }
 
 function readStations()
@@ -146,4 +144,6 @@ function dataReady() {
         if(mbta.readyState == 4) {
                 schedule = JSON.parse(mbta.responseText);
         }
+
+        alert(schedule["line"]);
 }
