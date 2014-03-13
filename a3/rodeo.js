@@ -47,7 +47,7 @@ function readCSV(file)
 
 function parseCSV(str)
 {
-    stations = str.split("\n");
+    stations = str.split(",");
     console.log(stations[0]);
 }
 
