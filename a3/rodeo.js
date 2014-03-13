@@ -87,7 +87,7 @@ function readCSV()
         stations[i] = stations[i].split(",");
     }
 
-    console.log(stations[0][0]);
+    console.log(stations[22][0]);
 
 }
 
