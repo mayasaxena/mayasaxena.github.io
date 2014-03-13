@@ -30,8 +30,8 @@ function init() {
 function readCSV()
 {
     stationstr = "Blue,Airport,42.374262,-71.030395
-Blue,Aquarium,42.359784,-71.051652";
-console.log(stationstr);
+                    Blue,Aquarium,42.359784,-71.051652";
+    console.log(stationstr);
 }
 
 function getMyLocation()
