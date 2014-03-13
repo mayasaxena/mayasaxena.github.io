@@ -31,7 +31,7 @@ function init() {
 function readCSV(file)
 {
     var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, true);
+    rawFile.open("GET", file, false);
     rawFile.onreadystatechange = function ()
     {
         if(rawFile.readyState === 4)
