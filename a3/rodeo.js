@@ -20,11 +20,29 @@ function init() {
         request = new XMLHttpRequest();
         map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
         getMyLocation();
-
+        readTextFile("stations.csv");
 
         mbta.onreadystatechange = dataReady; //rval has to be a function
         mbta.send(null);
 
+}
+
+function readTextFile(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, true);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                alert(allText);
+            }
+        }
+    }
+    rawFile.send(null);
 }
 
 
@@ -71,9 +89,3 @@ function dataReady() {
                 schedule = JSON.parse(mbta.responseText);
         }
 }
-
-var fr = new FileReader();
-fr.onload = function(e) {
-    alert(e.target.result);
-};
-fr.readAsText("stations.csv");
