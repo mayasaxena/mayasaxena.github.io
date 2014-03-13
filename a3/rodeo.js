@@ -22,7 +22,7 @@ function init() {
         map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
         getMyLocation();
         readCSV("stations.csv");
-        parseCSV(stationstr);
+        alert(stationstr);
         mbta.onreadystatechange = dataReady; //rval has to be a function
         mbta.send(null);
 
@@ -43,12 +43,6 @@ function readCSV(file)
         }
     }
     rawFile.send(null);
-}
-
-function parseCSV(str)
-{
-    stations = str.split(",");
-    console.log(stations[0]);
 }
 
 
