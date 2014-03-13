@@ -14,9 +14,9 @@ var infowindow = new google.maps.InfoWindow();
 var line;
 var stationstr;
 var stations;
-var redLine = "";
-var orangeLine = "";
-var blueLine = "";
+var redLine = [];
+var orangeLine = [];
+var blueLine = [];
 
 function init() {
         mbta = new XMLHttpRequest();
