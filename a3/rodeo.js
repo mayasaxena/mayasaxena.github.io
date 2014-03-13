@@ -84,7 +84,7 @@ function readCSV()
                 "Red,Savin Hill,42.31129,-71.053331",
                 "Red,Shawmut,42.29312583,-71.06573796000001",
                 "Red,South Station,42.352271,-71.05524200000001",
-                "Red,Wollaston,42.2665139,-71.02033"]
+                "Red,Wollaston,42.2665139,-71.02033"];
 
     for (var i = stations.length - 1; i >= 0; i--) {
         stations[i] = stations[i].split(",");
