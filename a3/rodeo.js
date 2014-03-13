@@ -17,6 +17,7 @@ var stations;
 var redLine = [];
 var orangeLine = [];
 var blueLine = [];
+var schedule;
 
 function init() {
         mbta = new XMLHttpRequest();
