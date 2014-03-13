@@ -30,8 +30,17 @@ function init() {
 
 function readCSV(file)
 {
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+        var text = reader.result;
+    }
+
+    stationstr = reader.readAsText(file);
+
+    /*
     var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, false);
+    rawFile.open("GET", file, true);
     rawFile.onreadystatechange = function ()
     {
         if(rawFile.readyState === 4)
@@ -42,7 +51,7 @@ function readCSV(file)
             }
         }
     }
-    rawFile.send(null);
+    rawFile.send(null);*/
 }
 
 
