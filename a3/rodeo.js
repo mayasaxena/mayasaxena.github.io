@@ -83,7 +83,7 @@ function readCSV()
                 Red,South Station,42.352271,-71.05524200000001 \
                 Red,Wollaston,42.2665139,-71.0203369";
 
-                stations = stationstr.split("\n")
+                stations = stationstr.split("\")
                 console.log(stations[0]);
 }
 
