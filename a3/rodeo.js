@@ -21,21 +21,10 @@ function init() {
         request = new XMLHttpRequest();
         map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
         getMyLocation();
-        readCSV();
 
         mbta.onreadystatechange = dataReady; //rval has to be a function
         mbta.send(null);
 
-}
-
-function readCSV()
-{
-
-    stationstr = "Blue,Airport,42.374262,-71.030395
-    Blue,Aquarium,42.359784,-71.051652"
-
-    console.log(stationstr);
-   
 }
 
 
