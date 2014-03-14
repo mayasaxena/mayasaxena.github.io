@@ -416,7 +416,7 @@ function dataReady()
         if (mbta.status == 500) {
                 contentString = "Something went wrong. The page will reload";
                 infowindow.setContent(contentString);
-                infowindow.opne(map, marker);
+                infowindow.open(map, marker);
                 location.reload();
         }
 
