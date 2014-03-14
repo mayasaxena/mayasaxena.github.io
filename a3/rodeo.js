@@ -308,7 +308,7 @@ function readStations()
     "station":"Wollaston",
     "lat":42.2665139,
     "long":-71.02033
-  }
+  },
   {
     "line":"Red",
     "station":"Quincy Center",
