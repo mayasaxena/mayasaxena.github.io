@@ -358,7 +358,7 @@ function readStations()
   },
 ];
 
-for (var i = 0, i < stations.length; i++) {
+for (var i = stations.length; i >= 0; i++) {
         if (stations[i].line == "Blue") {
                 blueLine.push(stations[i]);
         }
