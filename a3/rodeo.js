@@ -471,6 +471,8 @@ function displayStations(lineToDisplay)
                         icon: lineIcon
                 });
 
+                console.log(schedule.schedule[0].Destination);
+
 
                 var info = new google.maps.InfoWindow();
 
