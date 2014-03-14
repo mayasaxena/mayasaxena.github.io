@@ -522,6 +522,8 @@ function findClosestStation(line)
                 var c = 2 * (Math.atan2(Math.sqrt(a), (Math.sqrt(1-a)))); 
                 var d = R * c; 
 
+                console.log(d);
+
                 if (d < closestDist) {
                         closestDist = d;
                         closestStation = line[i].station;
