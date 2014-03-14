@@ -489,9 +489,8 @@ function displayStations(lineToDisplay) {
 
 
 }
-
-Number.prototype.toRad = function() {
-           return this * Math.PI / 180;
+function toRad(x) {
+           return (x * Math.PI) / 180;
         }
 
 function findClosestStation(line) {
@@ -506,10 +505,8 @@ function findClosestStation(line) {
                 var stLong = line[i].long; 
 
                 var R = 3963; // radius of Earth in miles
-                var x1 = stLat - myLat;
-                var dLat = x1.toRad();  
-                var x2 = stLong - myLong;
-                var dLon = x2.toRad();  
+                var dLat = toRad(stLat - myLat);  
+                var dLon = x2.toRad(stLong - myLong);  
                 var a = (Math.sin(dLat/2)) * (Math.sin(dLat/2)) + 
                         (Math.cos(myLat.toRad())) * (Math.cos(stLat.toRad())) * 
                         (Math.sin(dLon/2)) * (Math.sin(dLon/2));  
