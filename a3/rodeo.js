@@ -443,7 +443,7 @@ function displayStations(line) {
 
                 marker = new google.maps.Marker({
                         position: loc,
-                        title: lineToDisplay[i].station;
+                        title: lineToDisplay[i].station
                 });
 
                 marker.setMap(map);
