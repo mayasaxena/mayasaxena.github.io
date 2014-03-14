@@ -426,12 +426,12 @@ function dataReady()
                         lineIcon = "markers/blueline.png";
                         lineColor = "#0000ff";
                 }
-                else if(line == "orange") {
+                else if(schedule.line == "orange") {
                         line = orangeLine;
                         lineIcon = "markers/orangeline.png";
                         lineColor = "#ffa500";
                 }
-                else if(line == "red") {
+                else if(schedule.line == "red") {
                         line = redLine;
                         lineIcon = "markers/redline.png";
                         lineColor = "#ff0000";
