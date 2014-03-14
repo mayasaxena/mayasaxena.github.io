@@ -4,9 +4,9 @@ var myLat = 0;
 var myLong = 0;
 var myLoc = new google.maps.LatLng(myLat, myLong);
 var myOptions = {
-                        zoom: 13, // The larger the zoom number, the bigger the zoom
-                        center: myLoc,
-                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                zoom: 13, // The larger the zoom number, the bigger the zoom
+                center: myLoc,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
                 };
 var map;
 var marker;
@@ -354,15 +354,15 @@ function readStations()
 ];
 
 for (var i = stations.length - 1; i >= 0; i--) {
-    if (stations[i].line == "Blue") {
-        blueLine.push(stations[i]);
-    }
-    else if (stations[i].line == "Orange") {
-        orangeLine.push(stations[i]);
-    }
-    else if (stations[i].line == "Red") {
-        redLine.push(stations[i]);
-    }
+        if (stations[i].line == "Blue") {
+                blueLine.push(stations[i]);
+        }
+        else if (stations[i].line == "Orange") {
+                orangeLine.push(stations[i]);
+        }
+        else if (stations[i].line == "Red") {
+                redLine.push(stations[i]);
+        }       
 };
 
 
@@ -405,24 +405,49 @@ function renderMap()
 
 }
 
-function dataReady() {
-        if(mbta.status == 500) {
-            alert("Something went wrong. The page will refresh.")
-            location.reload();
-        }
-        if(mbta.readyState == 4) {
+function dataReady()
+{
 
+        //Accounts for error from database
+        if(mbta.status == 500) {
+                alert("Something went wrong. The page will refresh.")
+                location.reload();
+        }
+
+        if(mbta.readyState == 4) {
                 schedule = JSON.parse(mbta.responseText);
 
-                if (schedule["line"] == "blue") {
-                    console.log(blueLine);
-                }
-                else if (schedule["line"] == "orange") {
+                displayStations(schedule.line); //blue, orange or red
 
-                }
-                else if (schedule["line"] == "red") {
-
-                }
+            
         }
+}
+
+function displayStations(line) {
+        var lineToDisplay;
+
+        if(line == "blue") {
+                lineToDisplay = blueLine;
+        }
+        else if(line == "orange") {
+                lineToDisplay = orangeLine;
+        }
+        else if(line == "red") {
+                lineToDisplay = redLine;
+        }
+
+        for (var i = lineToDisplay.length - 1; i >= 0; i--) {
+
+                loc = new google.maps.LatLng(lineToDisplay[i].lat,
+                                             lineToDisplay[i].long);
+
+                marker = new google.maps.Marker({
+                        position: loc,
+                        title: lineToDisplay[i].station;
+                });
+
+                marker.setMap(map);
+        };
+
 
 }
