@@ -521,8 +521,11 @@ function findClosestStation(line) {
                 }
         };
 
-        infowindow.setContent("Closest station to current location is " + closestStation + " (" + closestDist + ") mi away");
+        google.maps.event.addListener(marker, 'click', function() {
+                infowindow.setContent("Closest station to current location is " + closestStation + " (" + closestDist + ") mi away");
+                infowindow.open(map, marker);
+        });
+        
 
-        marker.setMap(map);
 }
 
