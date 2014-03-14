@@ -354,18 +354,8 @@ function readStations()
 ];
 
     for (var i = 0; i < stations.length; i++) {
-        if(stations[i][0] == "Blue") {
-            blueLine.push(stations[i]);
-        }
-        else if(stations[i][0] == "Orange") {
-            orangeLine.push(stations[i]);
-        }
-        else if(stations[i][0] == "Red") {
-            redLine.push(stations[i]);
-        }
+        console.log(stations.line);
     }
-
-    console.log(redLine);
 
 }
 
