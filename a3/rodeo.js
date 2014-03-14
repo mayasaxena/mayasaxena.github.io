@@ -425,17 +425,19 @@ function dataReady()
 
 function displayStations(line) {
         var lineToDisplay;
-        var icon;
+        var ico;
 
         if(line == "blue") {
                 lineToDisplay = blueLine;
-                icon = 'blueLine.png';
+                ico = "markers/blueline.png";
         }
         else if(line == "orange") {
                 lineToDisplay = orangeLine;
+                ico = "markers/orangeline.png";
         }
         else if(line == "red") {
                 lineToDisplay = redLine;
+                ico = "markers/redline.png";
         }
 
         for (var i = lineToDisplay.length - 1; i >= 0; i--) {
@@ -446,6 +448,7 @@ function displayStations(line) {
                 st = new google.maps.Marker({
                         position: loc,
                         title: lineToDisplay[i].station
+                        icon: ico
                 });
 
                 var info = new google.maps.InfoWindow();
