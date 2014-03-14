@@ -448,7 +448,6 @@ function dataReady()
 
 function displayStations(lineToDisplay) {
         var pathCoords = [];
-        var 
 
         for (var i = lineToDisplay.length - 1; i >= 0; i--) {
 
