@@ -442,7 +442,7 @@ function dataReady()
 
 
                 displayStations(line); //blue, orange or red
-
+                console.log("before findClosestStation");
                 console.log(myLat);
                 console.log(myLong);
                 findClosestStation(line);
@@ -518,8 +518,6 @@ function findClosestStation(line)
                 var x = stLat - myLat;
                 var y = stLong - myLong;
 
-                console.log("x: " + x);
-                console.log("y: " + y);
                 var dLat = x.toRad();  
                 var dLon = y.toRad();
  
@@ -531,7 +529,6 @@ function findClosestStation(line)
                 var c = 2 * (Math.atan2(Math.sqrt(a), (Math.sqrt(1-a)))); 
                 var d = R * c; 
 
-                console.log("d: " + d + "\n");
 
                 if (d < closestDist) {
                         closestDist = d;
