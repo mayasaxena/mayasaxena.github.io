@@ -32,7 +32,7 @@ function init() {
 
 function readStations()
 {
-    stations = {[
+    stations = [
   {
     "line":"Blue",
     "station":"Airport",
@@ -351,7 +351,7 @@ function readStations()
     "lat":42.2665139,
     "long":-71.02033
   }
-]};
+];
 
     if(stations[i][0] == "Blue") {
         blueLine.push(stations[i]);
