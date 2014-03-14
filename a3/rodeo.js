@@ -509,44 +509,43 @@ function findClosestStation(line)
         var closestStation = "";
 
         navigator.geolocation.getCurrentPosition(function(position) {
-                        myLat = position.coords.latitude;
-                        myLong = position.coords.longitude;
-                        console.log("within find closest");
-                        console.log(myLat);
-                        console.log(myLong);
+                myLat = position.coords.latitude;
+                myLong = position.coords.longitude;
+                console.log("within find closest");
+                console.log(myLat);
+                console.log(myLong);
+        
+
+                for (var i = line.length - 1; i >= 0; i--) {
+                        var stLat = line[i].lat; 
+                        var stLong = line[i].long; 
+
+
+                        var R = 3963; // radius of Earth in miles
+
+                        var x = stLat - myLat;
+                        var y = stLong - myLong;
+
+                        var dLat = x.toRad();  
+                        var dLon = y.toRad();
+         
+
+                        var a = (Math.sin(dLat/2)) * (Math.sin(dLat/2)) + 
+                                (Math.cos(myLat.toRad())) * (Math.cos(stLat.toRad())) * 
+                                (Math.sin(dLon/2)) * (Math.sin(dLon/2));  
+
+                        var c = 2 * (Math.atan2(Math.sqrt(a), (Math.sqrt(1-a)))); 
+                        var d = R * c; 
+
+
+                        if (d < closestDist) {
+                                closestDist = d;
+                                closestStation = line[i].station;
+                        }
+                };
+
+                        contentString = "<p><span id='bold'>Current Location</span><br> Closest Station: " + closestStation + "<br>Distance: " + closestDist.toFixed(2) + " mi<\p>";
+
         });
-
-
-        for (var i = line.length - 1; i >= 0; i--) {
-                var stLat = line[i].lat; 
-                var stLong = line[i].long; 
-
-
-                var R = 3963; // radius of Earth in miles
-
-                var x = stLat - myLat;
-                var y = stLong - myLong;
-
-                var dLat = x.toRad();  
-                var dLon = y.toRad();
- 
-
-                var a = (Math.sin(dLat/2)) * (Math.sin(dLat/2)) + 
-                        (Math.cos(myLat.toRad())) * (Math.cos(stLat.toRad())) * 
-                        (Math.sin(dLon/2)) * (Math.sin(dLon/2));  
-
-                var c = 2 * (Math.atan2(Math.sqrt(a), (Math.sqrt(1-a)))); 
-                var d = R * c; 
-
-
-                if (d < closestDist) {
-                        closestDist = d;
-                        closestStation = line[i].station;
-                }
-        };
-
-                contentString = "<p><span id='bold'>Current Location</span><br> Closest Station: " + closestStation + "<br>Distance: " + closestDist.toFixed(2) + " mi<\p>";
-
-
 }
 
