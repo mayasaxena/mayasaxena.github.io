@@ -505,7 +505,7 @@ function findClosestStation(line) {
                 var stLong = line[i].long; 
 
                 var R = 3961; // miles
-                var x1 = stLat-myLat;
+                var x1 = stLat - myLat;
                 var dLat = x1.toRad();  
                 var x2 = stLong-myLong;
                 var dLon = x2.toRad();  
