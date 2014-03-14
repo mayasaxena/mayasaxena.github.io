@@ -29,6 +29,8 @@ function init() {
         request = new XMLHttpRequest();
         map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
         getMyLocation();
+        console.log(myLat);
+        console.log(myLong);
         readStations();
         mbta.onreadystatechange = dataReady; //rval has to be a function
         mbta.send(null);
@@ -441,6 +443,8 @@ function dataReady()
 
                 displayStations(line); //blue, orange or red
 
+                console.log(myLat);
+                console.log(myLong);
                 findClosestStation(line);
             
         }
@@ -523,11 +527,6 @@ function findClosestStation(line)
                 var dLat = x.toRad();  
                 var dLon = y.toRad(); 
 
-                p = (x * Math.PI)/180;
-                q = (y * Math.PI)/180;
-
-                console.log("p: " + p);
-                console.log("q: " + q);
 
                 console.log("dlat: " + dLat);
                 console.log("dLon: " + dLon);
