@@ -448,7 +448,7 @@ function dataReady()
 
 function displayStations(lineToDisplay) {
         var pathCoords = [];
-
+     
         for (var i = lineToDisplay.length - 1; i >= 0; i--) {
 
                 loc = new google.maps.LatLng(lineToDisplay[i].lat,
@@ -511,8 +511,8 @@ function findClosestStation(line) {
                 var dLon = x2.toRad();  
                 var a = Math.sin(dLat/2) * Math.sin(dLat/2) + 
                         Math.cos(myLat.toRad()) * Math.cos(stLat.toRad()) * 
-                        Math.sin(dLon/2) * Math.sin(dLon/2);
-                var c = 2 * Math.asin(Math.sqrt(a)); 
+                        Math.sin(dLon/2) * Math.sin(dLon/2);  
+                var c = 2 * Math.atan2(Math.sqrt(a), (Math.sqrt(1-a))); 
                 var d = R * c; 
 
                 if (d < closestDist) {
