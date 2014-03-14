@@ -503,6 +503,8 @@ function displayStations(lineToDisplay)
 
         linePath.setMap(map);
 
+        /* Take care of fork in Red Line */
+
         if (lineToDisplay == redLine) {
                 var forkCoords = [];
                 for (var i = redLineFork.length - 1; i >= 0; i--) {
@@ -529,6 +531,8 @@ Number.prototype.toRad = function() {
            return this * Math.PI / 180;
         }
 
+
+
 function findClosestStation(line) 
 {
 
@@ -536,7 +540,7 @@ function findClosestStation(line)
         var closestDist = 100000000000000;
         var closestStation = "";
 
-        //So that myLat and Long are accurate
+        //So that myLat and myLong are accurate
         navigator.geolocation.getCurrentPosition(function(position) {
                 myLat = position.coords.latitude;
                 myLong = position.coords.longitude;
@@ -569,7 +573,10 @@ function findClosestStation(line)
                         }
                 };
 
-                        contentString = "<p><span id='bold'>Current Location</span><br> Closest Station: " + closestStation + "<br>Distance: " + closestDist.toFixed(2) + " mi</p>";
+                contentString = "<p><span id='bold'>Current Location</span>\
+                                 <br>Closest Station: " + 
+                                 closestStation + "<br>Distance: " + 
+                                 closestDist.toFixed(2) + " mi</p>";
 
         });
 }
