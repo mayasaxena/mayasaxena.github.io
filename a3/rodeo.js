@@ -408,7 +408,7 @@ function renderMap()
 
 function dataReady() {
         if(mbta.status == 500) {
-            alert("Something went wrong. Refreshing...")
+            alert("Something went wrong. The page will refresh.")
             location.reload();
         }
         if(mbta.readyState == 4) {
