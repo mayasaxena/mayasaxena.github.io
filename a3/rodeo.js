@@ -522,7 +522,7 @@ function findClosestStation(line) {
         };
 
         infowindow = new google.maps.InfoWindow({
-                content: "The closest station to your current location is " + closestStation + " (" + closestDist + ") mi away";
+                content: "The closest station to your current location is " + closestStation + " (" + closestDist + ") mi away"
 
         });
                  
