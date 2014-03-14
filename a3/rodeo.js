@@ -513,11 +513,22 @@ function findClosestStation(line)
 
                 var R = 3963; // radius of Earth in miles
 
-                var dLat = (stLat - myLat).toRad();  
-                var dLon = (stLong - myLong).toRad(); 
+                var x = stLat - myLat;
+                var y = stLong - myLong;
+
+                console.log("x: " + x);
+                console.log("y: " + y);
+                var dLat = x.toRad();  
+                var dLon = y.toRad(); 
+
+                p = (x * Math.PI)/180;
+                q = (y * Math.PI)/180;
+
+                console.log("p: " + p);
+                console.log("q: " + q);
 
                 console.log("dlat: " + dLat);
-                console.log(dLon);
+                console.log("dLon: " + dLon);
  
 
                 var a = (Math.sin(dLat/2)) * (Math.sin(dLat/2)) + 
