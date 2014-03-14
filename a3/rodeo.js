@@ -365,7 +365,7 @@ function readStations()
         }
     }
 
-    console.log(redLine[0]);
+    console.log(redLine);
 
 }
 
@@ -416,7 +416,7 @@ function dataReady() {
                 schedule = JSON.parse(mbta.responseText);
 
                 if (schedule["line"] == "blue") {
-
+                    console.log(blueLine);
                 }
                 else if (schedule["line"] == "orange") {
 
