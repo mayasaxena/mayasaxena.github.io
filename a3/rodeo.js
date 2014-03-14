@@ -508,6 +508,8 @@ function findClosestStation(line)
                 var stLat = line[i].lat; 
                 var stLong = line[i].long; 
 
+                console.log(myLat);
+                console.log(myLong);
                 console.log(stLat);
                 console.log(stLong);
 
