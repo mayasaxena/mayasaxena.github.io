@@ -381,6 +381,8 @@ function getMyLocation()
                 navigator.geolocation.getCurrentPosition(function(position) {
                         myLat = position.coords.latitude;
                         myLong = position.coords.longitude;
+                        console.log(myLat);
+                        console.log(myLong);
                         renderMap();
                 });
         }
