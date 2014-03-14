@@ -472,12 +472,11 @@ function displayStations(lineToDisplay)
 			icon: lineIcon
 		});
 
-		stationSchedule = schedule.schedule.Destination;
-
+		console.log(schedule[i].schedule.Destination);
 		var info = new google.maps.InfoWindow();
 
 		google.maps.event.addListener(st, 'click', function() {
-			info.setContent(stationSchedule);
+			info.setContent(this.title);
 			info.open(map, this);
 		});
 
