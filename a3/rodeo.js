@@ -365,7 +365,7 @@ function readStations()
         }
     }
 
-    console.log(stations[0]);
+    console.log(redLine[0]);
 
 }
 
