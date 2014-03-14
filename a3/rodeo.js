@@ -400,7 +400,7 @@ function renderMap()
                 title: "Current Location"
         });
 
-        contentString = "<p>Current Location<\p><p>Closest Station: Loading...<\p>";
+        contentString = "Current Location\nClosest Station: Loading...";
 
         // Open info window on click of marker
         google.maps.event.addListener(marker, 'click', function() {
