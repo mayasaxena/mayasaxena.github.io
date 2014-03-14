@@ -406,6 +406,7 @@ function renderMap()
         });
 
         google.maps.event.addListener(infowindow, 'content_changed', function() {
+                alert("content_changed");
                 infowindow.open(map, marker);
         })
                 
@@ -420,7 +421,7 @@ function dataReady()
         if(mbta.status == 500) {
                 contentString = "Something went wrong";
                 infowindow.setContent(contentString);
-                window.setTimeout(function(){location.reload}, 3000);
+                window.setTimeout(function(){location.reload()},3000);
                 /*alert("Something went wrong. The page will refresh.")
                 location.reload();*/
         }
