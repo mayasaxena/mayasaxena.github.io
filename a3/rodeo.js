@@ -446,6 +446,11 @@ function displayStations(line) {
                         title: lineToDisplay[i].station
                 });
 
+                google.maps.event.addListener(marker, 'click', function() {
+                        infowindow.setContent(marker.title);
+                        infowindow.open(map, marker);
+                });
+
                 marker.setMap(map);
         };
 
