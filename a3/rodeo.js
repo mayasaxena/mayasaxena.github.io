@@ -419,6 +419,7 @@ function dataReady()
 
                 displayStations(schedule.line); //blue, orange or red
 
+                displayPath(schedule.line);
             
         }
 }
@@ -458,8 +459,40 @@ function displayStations(line) {
                         info.open(map, this);
                 });
 
+
                 st.setMap(map);
         };
 
+
+}
+
+function displayPath(line) {
+        var pathCoords;
+
+         if(line == "blue") {
+                lineColor = "#0000ff";
+        }
+        else if(line == "orange") {
+                lineColor = "#ffa500";
+        }
+        else if(line == "red") {
+                lineColor = "#ff0000";
+        }
+
+        for (var i = line.length - 1; i >= 0; i--) {
+                pathloc = new google.maps.LatLng(line[i].lat, line[i].long);
+
+                pathCoords.push(pathloc);
+        };
+
+        var linePath = new google.maps.Polyline({
+                path: pathCoords,
+                geodesic: true,
+                strokeColor: lineColor,
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+        });
+
+        linePath.setMap(map);
 
 }
