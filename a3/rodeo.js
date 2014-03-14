@@ -425,9 +425,11 @@ function dataReady()
 
 function displayStations(line) {
         var lineToDisplay;
+        var icon;
 
         if(line == "blue") {
                 lineToDisplay = blueLine;
+                icon = 'blueLine.png';
         }
         else if(line == "orange") {
                 lineToDisplay = orangeLine;
