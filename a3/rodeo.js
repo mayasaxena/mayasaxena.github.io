@@ -523,6 +523,6 @@ function findClosestStation(line) {
 
         infowindow.setContent("Closest station to current location is " + closestStation + " (" + closestDist + ") mi away");
 
-
+        marker.setMap(map);
 }
 
