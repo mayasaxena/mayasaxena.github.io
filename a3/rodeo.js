@@ -399,11 +399,7 @@ function renderMap()
                 title: "Current Location"
         });
 
-        // Open info window on click of marker
-        google.maps.event.addListener(marker, 'click', function() {
-                infowindow.setContent(marker.title);
-                infowindow.open(map, marker);
-        });
+       
                 
         marker.setMap(map);
 
@@ -525,7 +521,9 @@ function findClosestStation(line) {
                 infowindow.setContent("Closest station to current location is " + closestStation + " (" + closestDist + ") mi away");
                 infowindow.open(map, marker);
         });
+
         
+                 
 
 }
 
