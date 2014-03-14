@@ -419,12 +419,8 @@ function dataReady()
 
         //Accounts for error from database
         if(mbta.status == 500) {
-                contentString = "Something went wrong";
-                infowindow.setContent(contentString);
-                alert("changed content");
-                //window.setTimeout(function(){location.reload()},3000);
-                /*alert("Something went wrong. The page will refresh.")
-                location.reload();*/
+                alert("Something went wrong. The page will refresh.");
+                location.reload();
         }
 
         if(mbta.readyState == 4) {
