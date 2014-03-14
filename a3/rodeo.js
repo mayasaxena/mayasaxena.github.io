@@ -459,6 +459,7 @@ function dataReady()
 function displayStations(lineToDisplay) 
 {
         var pathCoords = [];
+        var scheduleString = "";
      
         for (var i = lineToDisplay.length - 1; i >= 0; i--) {
 
@@ -471,13 +472,13 @@ function displayStations(lineToDisplay)
                         icon: lineIcon
                 });
 
-                console.log(schedule.schedule[0].Destination);
+                scheduleString = schedule.schedule[0].Destination;
 
 
                 var info = new google.maps.InfoWindow();
 
                 google.maps.event.addListener(st, 'click', function() {
-                        info.setContent(this.title);
+                        info.setContent(scheduleString);
                         info.open(map, this);
                 });
 
