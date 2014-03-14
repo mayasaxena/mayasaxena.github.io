@@ -415,6 +415,8 @@ function dataReady()
         //Accounts for error from database
         if (mbta.status == 500) {
                 contentString = "Something went wrong. The page will reload";
+                infowindow.setContent(contentString);
+                infowindow.opne(map, marker);
                 location.reload();
         }
 
