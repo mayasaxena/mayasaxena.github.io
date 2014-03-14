@@ -490,8 +490,8 @@ function displayStations(lineToDisplay) {
 
 }
 function toRad(x) {
-           return (x * Math.PI) / 180;
-        }
+        return (x * Math.PI) / 180;
+}
 
 function findClosestStation(line) {
 
@@ -520,7 +520,7 @@ function findClosestStation(line) {
         };
 
                 contentString = "<p><span id='bold'>Current Location</span><br> Closest Station: " + closestStation + "<br>Distance: " + closestDist.toFixed(2) + " mi<\p>";
-
+                alert(contentString);
 
 }
 
