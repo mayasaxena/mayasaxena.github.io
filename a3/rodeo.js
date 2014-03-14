@@ -441,17 +441,17 @@ function displayStations(line) {
                 loc = new google.maps.LatLng(lineToDisplay[i].lat,
                                              lineToDisplay[i].long);
 
-                marker = new google.maps.Marker({
+                st = new google.maps.Marker({
                         position: loc,
                         title: lineToDisplay[i].station
                 });
 
-                google.maps.event.addListener(marker, 'click', function() {
-                        infowindow.setContent(marker.title);
-                        infowindow.open(map, marker);
+                google.maps.event.addListener(st, 'click', function() {
+                        infowindow.setContent(st.title);
+                        infowindow.open(map, st);
                 });
 
-                marker.setMap(map);
+                st.setMap(map);
         };
 
 
