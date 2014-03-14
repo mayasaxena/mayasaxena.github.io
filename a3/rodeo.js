@@ -413,6 +413,9 @@ function dataReady()
 {
 
         //Accounts for error from database
+        if (mbta.status == 500) {
+                alert("Something went wrong. This page will reload.");
+        }
 
         if(mbta.readyState == 4) {
                 schedule = JSON.parse(mbta.responseText);
