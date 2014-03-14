@@ -449,8 +449,8 @@ function displayStations(line) {
                 var info = new google.maps.InfoWindow();
 
                 google.maps.event.addListener(st, 'click', function() {
-                        info.setContent(st.title);
-                        info.open(map, st);
+                        info.setContent(this.title);
+                        info.open(map, this);
                 });
 
                 st.setMap(map);
