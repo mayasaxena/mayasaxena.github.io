@@ -447,7 +447,7 @@ function displayStations(line) {
 
                 st = new google.maps.Marker({
                         position: loc,
-                        title: lineToDisplay[i].station
+                        title: lineToDisplay[i].station,
                         icon: ico
                 });
 
