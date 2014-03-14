@@ -511,11 +511,11 @@ function findClosestStation(line)
         navigator.geolocation.getCurrentPosition(function(position) {
                         myLat = position.coords.latitude;
                         myLong = position.coords.longitude;
+                        console.log("within find closest");
                         console.log(myLat);
                         console.log(myLong);
         });
 
-        
 
         for (var i = line.length - 1; i >= 0; i--) {
                 var stLat = line[i].lat; 
