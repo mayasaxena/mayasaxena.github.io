@@ -413,7 +413,6 @@ function renderMap()
         });
 
         google.maps.event.addListener(infowindow, 'content_changed', function() {
-                alert("content_changed");
                 infowindow.open(map, marker);
         })
                 
