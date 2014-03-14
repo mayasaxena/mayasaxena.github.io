@@ -418,8 +418,6 @@ function dataReady()
                 schedule = JSON.parse(mbta.responseText);
 
                 displayStations(schedule.line); //blue, orange or red
-
-                displayPath(schedule.line);
             
         }
 }
@@ -427,18 +425,23 @@ function dataReady()
 function displayStations(line) {
         var lineToDisplay;
         var ico;
+        var pathCoords = [];
+        var lineColor;
 
         if(line == "blue") {
                 lineToDisplay = blueLine;
                 ico = "markers/blueline.png";
+                lineColor = "#0000ff";
         }
         else if(line == "orange") {
                 lineToDisplay = orangeLine;
                 ico = "markers/orangeline.png";
+                lineColor = "#ffa500";
         }
         else if(line == "red") {
                 lineToDisplay = redLine;
                 ico = "markers/redline.png";
+                lineColor = "#ff0000";
         }
 
         for (var i = lineToDisplay.length - 1; i >= 0; i--) {
@@ -461,28 +464,10 @@ function displayStations(line) {
 
 
                 st.setMap(map);
-        };
 
 
-}
-
-function displayPath(line) {
-        var pathCoords = [];
-
-         if(line == "blue") {
-                lineColor = "#0000ff";
-        }
-        else if(line == "orange") {
-                lineColor = "#ffa500";
-        }
-        else if(line == "red") {
-                lineColor = "#ff0000";
-        }
-
-        for (var i = line.length - 1; i >= 0; i--) {
-                pathloc = new google.maps.LatLng(line[i].lat, line[i].long);
-                console.log(line[i].lat);
-                console.log(line[i].long);
+                //Getting coordinates for polyline
+                pathloc = new google.maps.LatLng(lineToDisplay[i].lat, lineToDisplay[i].long);
                 pathCoords.push(pathloc);
         };
 
@@ -496,4 +481,6 @@ function displayPath(line) {
 
         linePath.setMap(map);
 
+
 }
+
