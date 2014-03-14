@@ -4,10 +4,10 @@ var myLat = 0;
 var myLong = 0;
 var myLoc = new google.maps.LatLng(myLat, myLong);
 var myOptions = {
-                zoom: 13, // The larger the zoom number, the bigger the zoom
-                center: myLoc,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-                };
+		zoom: 13, // The larger the zoom number, the bigger the zoom
+		center: myLoc,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
 var map;
 var marker;
 var infowindow = new google.maps.InfoWindow();
@@ -25,13 +25,13 @@ var lineColor;
 var lineIcon;
 
 function init() {
-        mbta = new XMLHttpRequest();
-        mbta.open("GET", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true);
-        map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-        getMyLocation();
-        readStations();
-        mbta.onreadystatechange = dataReady; //rval has to be a function
-        mbta.send(null);
+	mbta = new XMLHttpRequest();
+	mbta.open("GET", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true);
+	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+	getMyLocation();
+	readStations();
+	mbta.onreadystatechange = dataReady; //rval has to be a function
+	mbta.send(null);
 
 }
 
@@ -358,226 +358,229 @@ function readStations()
   },
 ];
 
-        for (var i = stations.length - 1; i >= 0; i--) {
-                if (stations[i].line == "Blue") {
-                        blueLine.push(stations[i]);
-                }
-                else if (stations[i].line == "Orange") {
-                        orangeLine.push(stations[i]);
-                }
-                else if (stations[i].line == "Red") {
-                        redLine.push(stations[i]);
+	for (var i = stations.length - 1; i >= 0; i--) {
+		if (stations[i].line == "Blue") {
+			blueLine.push(stations[i]);
+		}
+		else if (stations[i].line == "Orange") {
+			orangeLine.push(stations[i]);
+		}
+		else if (stations[i].line == "Red") {
+			redLine.push(stations[i]);
 
-                        if (stations[i].station == "JFK/UMass" ||
-                            stations[i].station == "Ashmont" || 
-                            stations[i].station == "Shawmut" ||
-                            stations[i].station == "Fields Corner" ||
-                            stations[i].station == "Savin Hill" ) {
-                                redLineFork.push(stations[i]);
-                        }
-                }   
-        };
+			if (stations[i].station == "JFK/UMass" ||
+			    stations[i].station == "Ashmont" || 
+			    stations[i].station == "Shawmut" ||
+			    stations[i].station == "Fields Corner" ||
+			    stations[i].station == "Savin Hill" ) {
+				redLineFork.push(stations[i]);
+			}
+		}   
+	};
 
 }
 
 function getMyLocation()
 {
-        if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
-                navigator.geolocation.getCurrentPosition(function(position) {
-                        myLat = position.coords.latitude;
-                        myLong = position.coords.longitude;
-                        renderMap();
-                });
-        }
-        else {
-                alert("Geolocation is not supported by your web browser.");
-        }
+	if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
+		navigator.geolocation.getCurrentPosition(function(position) {
+			myLat = position.coords.latitude;
+			myLong = position.coords.longitude;
+			renderMap();
+		});
+	}
+	else {
+		alert("Geolocation is not supported by your web browser.");
+	}
 }
 
 function renderMap()
 {
-        myLoc = new google.maps.LatLng(myLat, myLong);
-        
-        // Update map and go there...
-        map.panTo(myLoc);
+	myLoc = new google.maps.LatLng(myLat, myLong);
+	
+	// Update map and go there...
+	map.panTo(myLoc);
 
-        // Create a marker
-        marker = new google.maps.Marker({
-                position: myLoc,
-                title: "Current Location"
-        });
+	// Create a marker
+	marker = new google.maps.Marker({
+		position: myLoc,
+		title: "Current Location"
+	});
 
-        // Open info window on click of marker
-        google.maps.event.addListener(marker, 'click', function() {
-                infowindow.setContent(contentString);
-                infowindow.open(map, marker);
-        });
+	// Open info window on click of marker
+	google.maps.event.addListener(marker, 'click', function() {
+		infowindow.setContent(contentString);
+		infowindow.open(map, marker);
+	});
 
-        google.maps.event.addListener(infowindow, 'content_changed', function() {
-                infowindow.open(map, marker);
-        })
-                
-        marker.setMap(map);
+	google.maps.event.addListener(infowindow, 'content_changed', function() {
+		infowindow.open(map, marker);
+	})
+		
+	marker.setMap(map);
 
 }
 
 function dataReady()
 {
 
-        //Accounts for error from database
-        if(mbta.status == 500) {
-                alert("Something went wrong. The page will refresh.");
-                location.reload();
-        }
+	//Accounts for error from database
+	if(mbta.status == 500) {
+		alert("Something went wrong. The page will refresh.");
+		location.reload();
+	}
 
-        if(mbta.readyState == 4) {
-                schedule = JSON.parse(mbta.responseText);
+	if(mbta.readyState == 4) {
+		schedule = JSON.parse(mbta.responseText);
 
-                if(schedule.line == "blue") {
-                        line = blueLine;
-                        lineIcon = "markers/blueline.png";
-                        lineColor = "#0000ff";
-                }
-                else if(schedule.line == "orange") {
-                        line = orangeLine;
-                        lineIcon = "markers/orangeline.png";
-                        lineColor = "#ffa500";
-                }
-                else if(schedule.line == "red") {
-                        line = redLine;
-                        lineIcon = "markers/redline.png";
-                        lineColor = "#ff0000";
-                }
+		if(schedule.line == "blue") {
+			line = blueLine;
+			lineIcon = "markers/blueline.png";
+			lineColor = "#0000ff";
+		}
+		else if(schedule.line == "orange") {
+			line = orangeLine;
+			lineIcon = "markers/orangeline.png";
+			lineColor = "#ffa500";
+		}
+		else if(schedule.line == "red") {
+			line = redLine;
+			lineIcon = "markers/redline.png";
+			lineColor = "#ff0000";
+		}
 
 
-                displayStations(line); //blue, orange or red
-                findClosestStation(line);
-            
-        }
+		displayStations(line); //blue, orange or red
+		findClosestStation(line);
+	    
+	}
 }
 
 function displayStations(lineToDisplay) 
 {
-        var pathCoords = [];
+	var pathCoords = [];
+	var stationSchedule = "";
      
-        for (var i = lineToDisplay.length - 1; i >= 0; i--) {
+	for (var i = lineToDisplay.length - 1; i >= 0; i--) {
 
-                loc = new google.maps.LatLng(lineToDisplay[i].lat,
-                                             lineToDisplay[i].long);
+		loc = new google.maps.LatLng(lineToDisplay[i].lat,
+					     lineToDisplay[i].long);
 
-                st = new google.maps.Marker({
-                        position: loc,
-                        title: lineToDisplay[i].station,
-                        icon: lineIcon
-                });
+		st = new google.maps.Marker({
+			position: loc,
+			title: lineToDisplay[i].station,
+			icon: lineIcon
+		});
 
-                var info = new google.maps.InfoWindow();
+		stationSchedule = schedule.schedule.Destination;
 
-                google.maps.event.addListener(st, 'click', function() {
-                        info.setContent(this.title);
-                        info.open(map, this);
-                });
+		var info = new google.maps.InfoWindow();
 
-
-                st.setMap(map);
-
-
-                //Getting coordinates for polyline
-                pathloc = new google.maps.LatLng(lineToDisplay[i].lat, lineToDisplay[i].long);
-                if (lineToDisplay[i].station != "Ashmont" && 
-                    lineToDisplay[i].station != "Shawmut" && 
-                    lineToDisplay[i].station != "Fields Corner" && 
-                    lineToDisplay[i].station != "Savin Hill") {
-                        pathCoords.push(pathloc);
-                }
-        };
+		google.maps.event.addListener(st, 'click', function() {
+			info.setContent(stationSchedule);
+			info.open(map, this);
+		});
 
 
-        var linePath = new google.maps.Polyline({
-                path: pathCoords,
-                geodesic: true,
-                strokeColor: lineColor,
-                strokeOpacity: 1.0,
-                strokeWeight: 4
-        });
+		st.setMap(map);
 
-        linePath.setMap(map);
 
-        /* Take care of fork in Red Line */
+		//Getting coordinates for polyline
+		pathloc = new google.maps.LatLng(lineToDisplay[i].lat, lineToDisplay[i].long);
+		if (lineToDisplay[i].station != "Ashmont" && 
+		    lineToDisplay[i].station != "Shawmut" && 
+		    lineToDisplay[i].station != "Fields Corner" && 
+		    lineToDisplay[i].station != "Savin Hill") {
+			pathCoords.push(pathloc);
+		}
+	};
 
-        if (lineToDisplay == redLine) {
-                var forkCoords = [];
-                for (var i = redLineFork.length - 1; i >= 0; i--) {
-                        forkloc = new google.maps.LatLng(redLineFork[i].lat, 
-                                                         redLineFork[i].long);
-                        forkCoords.push(forkloc);
 
-                };  
+	var linePath = new google.maps.Polyline({
+		path: pathCoords,
+		geodesic: true,
+		strokeColor: lineColor,
+		strokeOpacity: 1.0,
+		strokeWeight: 4
+	});
 
-                var forkPath = new google.maps.Polyline({
-                        path: forkCoords,
-                        geodesic: true,
-                        strokeColor: lineColor,
-                        strokeOpacity: 1.0,
-                        strokeWeight: 4
-                });
+	linePath.setMap(map);
 
-                forkPath.setMap(map);  
-        }
+	/* Take care of fork in Red Line */
+
+	if (lineToDisplay == redLine) {
+		var forkCoords = [];
+		for (var i = redLineFork.length - 1; i >= 0; i--) {
+			forkloc = new google.maps.LatLng(redLineFork[i].lat, 
+							 redLineFork[i].long);
+			forkCoords.push(forkloc);
+
+		};  
+
+		var forkPath = new google.maps.Polyline({
+			path: forkCoords,
+			geodesic: true,
+			strokeColor: lineColor,
+			strokeOpacity: 1.0,
+			strokeWeight: 4
+		});
+
+		forkPath.setMap(map);  
+	}
 
 }
 
 Number.prototype.toRad = function() {
-           return this * Math.PI / 180;
-        }
+	   return this * Math.PI / 180;
+	}
 
 
 
 function findClosestStation(line) 
 {
 
-        //arbitrarily large for first number
-        var closestDist = 100000000000000;
-        var closestStation = "";
+	//arbitrarily large for first number
+	var closestDist = 100000000000000;
+	var closestStation = "";
 
-        //So that myLat and myLong are accurate
-        navigator.geolocation.getCurrentPosition(function(position) {
-                myLat = position.coords.latitude;
-                myLong = position.coords.longitude;
+	//So that myLat and myLong are accurate
+	navigator.geolocation.getCurrentPosition(function(position) {
+		myLat = position.coords.latitude;
+		myLong = position.coords.longitude;
 
-                for (var i = line.length - 1; i >= 0; i--) {
-                        var stLat = line[i].lat; 
-                        var stLong = line[i].long; 
-
-
-                        var R = 3963; // radius of Earth in miles
-
-                        var x = stLat - myLat;
-                        var y = stLong - myLong;
-
-                        var dLat = x.toRad();  
-                        var dLon = y.toRad();
-         
-
-                        var a = (Math.sin(dLat/2)) * (Math.sin(dLat/2)) + 
-                                (Math.cos(myLat.toRad())) * (Math.cos(stLat.toRad())) * 
-                                (Math.sin(dLon/2)) * (Math.sin(dLon/2));  
-
-                        var c = 2 * (Math.atan2(Math.sqrt(a), (Math.sqrt(1-a)))); 
-                        var d = R * c; 
+		for (var i = line.length - 1; i >= 0; i--) {
+			var stLat = line[i].lat; 
+			var stLong = line[i].long; 
 
 
-                        if (d < closestDist) {
-                                closestDist = d;
-                                closestStation = line[i].station;
-                        }
-                };
+			var R = 3963; // radius of Earth in miles
 
-                contentString = "<p><span id='bold'>Current Location</span>\
-                                 <br>Closest Station: " + 
-                                 closestStation + "<br>Distance: " + 
-                                 closestDist.toFixed(2) + " mi</p>";
+			var x = stLat - myLat;
+			var y = stLong - myLong;
 
-        });
+			var dLat = x.toRad();  
+			var dLon = y.toRad();
+	 
+
+			var a = (Math.sin(dLat/2)) * (Math.sin(dLat/2)) + 
+				(Math.cos(myLat.toRad())) * (Math.cos(stLat.toRad())) * 
+				(Math.sin(dLon/2)) * (Math.sin(dLon/2));  
+
+			var c = 2 * (Math.atan2(Math.sqrt(a), (Math.sqrt(1-a)))); 
+			var d = R * c; 
+
+
+			if (d < closestDist) {
+				closestDist = d;
+				closestStation = line[i].station;
+			}
+		};
+
+		contentString = "<p><span id='bold'>Current Location</span>\
+				 <br>Closest Station: " + 
+				 closestStation + "<br>Distance: " + 
+				 closestDist.toFixed(2) + " mi</p>";
+
+	});
 }
 
