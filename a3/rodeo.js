@@ -11,6 +11,7 @@ var myOptions = {
 var map;
 var marker;
 var infowindow = new google.maps.InfoWindow();
+var contentString = "";
 
 var stations;
 var redLine = [];
@@ -396,14 +397,8 @@ function renderMap()
         // Create a marker
         marker = new google.maps.Marker({
                 position: myLoc,
-                title: "Current Location"
         });
 
-        // Open info window on click of marker
-        google.maps.event.addListener(marker, 'click', function() {
-                infowindow.setContent(marker.title);
-                infowindow.open(map, marker);
-        });
                 
         marker.setMap(map);
 
@@ -490,7 +485,6 @@ function displayStations(lineToDisplay) {
 }
 
 function findClosestStation(line) {
-        alert("finding closest");
 
         //arbitrarily large for first number
         var closestDist = 100000000000000;
@@ -521,11 +515,17 @@ function findClosestStation(line) {
                 }
         };
 
-        infowindow = new google.maps.InfoWindow({
-                content: "The closest station to your current location is " + closestStation + " (" + closestDist + ") mi away"
 
-        });
-                 
+                contentString = "The closest station to your current location is "
+                                 + closestStation + " (" + closestDist + ") mi away";
+
+                 // Open info window on click of marker
+                google.maps.event.addListener(marker, 'click', function() {
+                        infowindow.setContent(contentString);
+                        infowindow.open(map, marker);
+                });
+
+                marker.setMap(map);
 
 }
 
