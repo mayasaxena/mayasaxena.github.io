@@ -404,6 +404,10 @@ function renderMap()
                 infowindow.setContent(contentString);
                 infowindow.open(map, marker);
         });
+
+        google.maps.event.addListener(marker, 'content_changed', function() {
+                infowindow.open(map, marker);
+        });
                 
         marker.setMap(map);
 
@@ -416,7 +420,6 @@ function dataReady()
         if (mbta.status == 500) {
                 contentString = "<p id='big' Something went wrong. The page will reload</p>";
                 infowindow.setContent(contentString);
-                infowindow.open(map, marker);
                 window.setTimeout(function() {location.reload()}, 3000);
         }
 
