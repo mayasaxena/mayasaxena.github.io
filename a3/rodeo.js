@@ -490,6 +490,7 @@ function displayStations(lineToDisplay) {
 }
 
 function findClosestStation(line) {
+        alert("finding closest");
 
         //arbitrarily large for first number
         var closestDist = 100000000000000;
