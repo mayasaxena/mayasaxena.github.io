@@ -518,6 +518,7 @@ function findClosestStation(line) {
                 if (d < closestDist) {
                         closestDist = d;
                         closestStation = line[i].station;
+                        console.log(closestDist);
                 }
         };
 
