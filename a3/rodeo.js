@@ -140,12 +140,22 @@ function renderMap()
 }
 
 function dataReady() {
-
+        if(mbta.status == 500) {
+            alert("Something went wrong. Refreshing...")
+            location.reload();
+        }
         if(mbta.readyState == 4) {
+
                 schedule = JSON.parse(mbta.responseText);
 
-                if (schedule["line"] == "red") {
-                    console.log(redLine);
+                if (schedule["line"] == "blue") {
+
+                }
+                else if (schedule["line"] == "orange") {
+
+                }
+                else if (schedule["line"] == "red") {
+
                 }
         }
 
