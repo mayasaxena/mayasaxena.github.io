@@ -522,7 +522,7 @@ function findClosestStation(line) {
                 }
         };
 
-                contentString = "Current Location\nClosest Station: " + closestStation + " (" + closestDist.toFixed(2) + " mi away)";
+                contentString = "<p>Current Location <br> Closest Station: " + closestStation + " (" + closestDist.toFixed(2) + " mi away</p>)";
 
 
 }
