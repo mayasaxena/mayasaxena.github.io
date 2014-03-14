@@ -448,6 +448,7 @@ function dataReady()
 
 function displayStations(lineToDisplay) {
         var pathCoords = [];
+        var 
 
         for (var i = lineToDisplay.length - 1; i >= 0; i--) {
 
@@ -511,14 +512,13 @@ function findClosestStation(line) {
                 var dLon = x2.toRad();  
                 var a = Math.sin(dLat/2) * Math.sin(dLat/2) + 
                         Math.cos(myLat.toRad()) * Math.cos(stLat.toRad()) * 
-                        Math.sin(dLon/2) * Math.sin(dLon/2);  
-                var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+                        Math.sin(dLon/2) * Math.sin(dLon/2);
+                var c = 2 * Math.asin(Math.sqrt(a)); 
                 var d = R * c; 
 
                 if (d < closestDist) {
                         closestDist = d;
                         closestStation = line[i].station;
-                        console.log(closestDist);
                 }
         };
 
