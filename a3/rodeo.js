@@ -399,7 +399,11 @@ function renderMap()
                 title: "Current Location"
         });
 
-       
+        // Open info window on click of marker
+        google.maps.event.addListener(marker, 'click', function() {
+                infowindow.setContent(marker.title);
+                infowindow.open(map, marker);
+        });
                 
         marker.setMap(map);
 
@@ -517,12 +521,10 @@ function findClosestStation(line) {
                 }
         };
 
-        google.maps.event.addListener(marker, 'click', function() {
-                infowindow.setContent("Closest station to current location is " + closestStation + " (" + closestDist + ") mi away");
-                infowindow.open(map, marker);
-        });
+        infowindow = new google.maps.InfoWindow({
+                content: "The closest station to your current location is " + closestStation + " (" + closestDist + ") mi away";
 
-        
+        });
                  
 
 }
