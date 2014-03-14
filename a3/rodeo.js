@@ -472,7 +472,8 @@ function displayStations(lineToDisplay)
                         icon: lineIcon
                 });
 
-                scheduleString = schedule.schedule[0].Destination;
+
+                scheduleString = makeScheduleTable();
 
 
                 var info = new google.maps.InfoWindow();
@@ -583,5 +584,14 @@ function findClosestStation(line)
                                  closestDist.toFixed(2) + " mi</p>";
 
         });
+}
+
+function makeScheduleString()
+{
+	var str = "";
+	str += "<table>"
+	for (var i = schedule.schedule.length - 1; i >= 0; i--) {
+		str += schedule.schedule[i].Destination
+	};
 }
 
