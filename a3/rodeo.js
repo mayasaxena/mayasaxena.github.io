@@ -353,16 +353,18 @@ function readStations()
   }
 ];
 
-    if(stations[i][0] == "Blue") {
-        blueLine.push(stations[i]);
+    for (var i = 0; i < stations.length; i++) {
+        if(stations[i][0] == "Blue") {
+            blueLine.push(stations[i]);
+        }
+        else if(stations[i][0] == "Orange") {
+            orangeLine.push(stations[i]);
+        }
+        else if(stations[i][0] == "Red") {
+            redLine.push(stations[i]);
+        }
     }
-    else if(stations[i][0] == "Orange") {
-        orangeLine.push(stations[i]);
-    }
-    else if(stations[i][0] == "Red") {
-        redLine.push(stations[i]);
-    }
-    
+
     console.log(stations[0]);
 
 }
