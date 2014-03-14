@@ -397,7 +397,10 @@ function renderMap()
         // Create a marker
         marker = new google.maps.Marker({
                 position: myLoc,
+                title: "Current Location"
         });
+
+        contentString = "Current Location, closest T stop loading...";
 
         // Open info window on click of marker
         google.maps.event.addListener(marker, 'click', function() {
@@ -521,8 +524,8 @@ function findClosestStation(line) {
         };
 
                 Math.
-                contentString = "<p>The closest station to your current location is "
-                                 + closestStation + " (" + closestDist.toFixed(2) + ") mi away</p>";
+                contentString = "The closest station to your current location is "
+                                 + closestStation + " (" + closestDist.toFixed(2) + ") mi away";
 
 
 }
