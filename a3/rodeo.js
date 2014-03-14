@@ -15,6 +15,7 @@ var contentString = "";
 
 var stations;
 var redLine = [];
+var redLineFork = [];
 var orangeLine = [];
 var blueLine = [];
 var schedule;
@@ -357,7 +358,7 @@ function readStations()
   },
 ];
 
-for (var i = stations.length - 1; i >= 0; i--) {
+for (var i = 0, i < stations.length; i++) {
         if (stations[i].line == "Blue") {
                 blueLine.push(stations[i]);
         }
@@ -366,6 +367,13 @@ for (var i = stations.length - 1; i >= 0; i--) {
         }
         else if (stations[i].line == "Red") {
                 redLine.push(stations[i]);
+
+                if (stations[i].station == "Ashmont" || 
+                    stations[i].station == "Shawmut" ||
+                    stations[i].station == "Fields Corner" ||
+                    stations[i].station == "Savin Hill" ) {
+                        redLineFork.push(stations[i]);
+                }
         }       
 };
 
@@ -477,7 +485,12 @@ function displayStations(lineToDisplay)
 
                 //Getting coordinates for polyline
                 pathloc = new google.maps.LatLng(lineToDisplay[i].lat, lineToDisplay[i].long);
-                pathCoords.push(pathloc);
+                if (lineToDisplay[i].station != "Ashmont" && 
+                    lineToDisplay[i].station != "Shawmut" && 
+                    lineToDisplay[i].station != "Fields Corner" && 
+                    lineToDisplay[i].station != "Savin Hill") {
+                        pathCoords.push(pathloc);
+                }
         };
 
 
@@ -491,6 +504,25 @@ function displayStations(lineToDisplay)
 
         linePath.setMap(map);
 
+        if (lineToDisplay == redLine) {
+                var forkCoords = [];
+                for (var i = redLineFork.length - 1; i >= 0; i--) {
+                        forkloc = new google.maps.LatLng(redLineFork[i].lat, 
+                                                         redLineFork[i].long);
+                        forkCoords.push(forkloc);
+
+                };  
+
+                var forkPath = new google.maps.Polyline({
+                        path: forkCoords,
+                        geodesic: true,
+                        strokeColor: lineColor,
+                        strokeOpacity: 1.0,
+                        strokeWeight: 4
+                });
+
+                forkPath.setMap(map);  
+        }
 
 }
 
@@ -505,6 +537,7 @@ function findClosestStation(line)
         var closestDist = 100000000000000;
         var closestStation = "";
 
+        //So that myLat and Long are accurate
         navigator.geolocation.getCurrentPosition(function(position) {
                 myLat = position.coords.latitude;
                 myLong = position.coords.longitude;
