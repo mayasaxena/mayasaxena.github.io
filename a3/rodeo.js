@@ -400,7 +400,7 @@ function renderMap()
                 title: "Current Location"
         });
 
-        contentString = "Current Location, closest T stop loading...";
+        contentString = "Current Location\nClosest Station: Loading...";
 
         // Open info window on click of marker
         google.maps.event.addListener(marker, 'click', function() {
@@ -523,9 +523,7 @@ function findClosestStation(line) {
                 }
         };
 
-                Math.
-                contentString = "The closest station to your current location is "
-                                 + closestStation + " (" + closestDist.toFixed(2) + ") mi away";
+                contentString = "Current Location\nClosest Station: " + closestStation + " (" + closestDist.toFixed(2) + " mi away)";
 
 
 }
