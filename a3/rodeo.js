@@ -26,14 +26,14 @@ var lineIcon;
 function init() {
         mbta = new XMLHttpRequest();
         mbta.open("GET", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true);
+        mbta.onreadystatechange = dataReady; //rval has to be a function
+        mbta.send(null);
         request = new XMLHttpRequest();
         map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
         getMyLocation();
         console.log(myLat);
         console.log(myLong);
         readStations();
-        mbta.onreadystatechange = dataReady; //rval has to be a function
-        mbta.send(null);
 
 }
 
