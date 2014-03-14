@@ -14,3 +14,6 @@ http://you.arenot.me/2010/06/29/google-maps-api-v3-0-multiple-markers-multiple-i
 
 Credit to Benjamin Keen for marker files:
 http://www.benjaminkeen.com/2007/01/
+
+Haversine Formula code adapted from: 
+http://stackoverflow.com/questions/14560999/using-the-haversine-formula-in-javascript

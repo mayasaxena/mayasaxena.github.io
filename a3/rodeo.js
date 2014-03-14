@@ -481,7 +481,7 @@ function displayStations(lineToDisplay) {
                 geodesic: true,
                 strokeColor: lineColor,
                 strokeOpacity: 1.0,
-                strokeWeight: 2
+                strokeWeight: 4
         });
 
         linePath.setMap(map);
@@ -490,6 +490,38 @@ function displayStations(lineToDisplay) {
 }
 
 function findClosestStation(line) {
+
+        //arbitrarily large for first number
+        var closestDist = 100000000000000;
+        var closestStation = "";
+
+        Number.prototype.toRad = function() {
+           return this * Math.PI / 180;
+        }
+
+        for (var i = line.length - 1; i >= 0; i--) {
+                var stLat = line[i].lat; 
+                var stLong = line[i].long; 
+
+                var R = 3961; // miles
+                var x1 = stLat-myLat;
+                var dLat = x1.toRad();  
+                var x2 = stLong-myLong;
+                var dLon = x2.toRad();  
+                var a = Math.sin(dLat/2) * Math.sin(dLat/2) + 
+                        Math.cos(myLat.toRad()) * Math.cos(stLat.toRad()) * 
+                        Math.sin(dLon/2) * Math.sin(dLon/2);  
+                var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+                var d = R * c; 
+
+                if (d < closestDist) {
+                        closestDist = d;
+                        closestStation = line[i].station;
+                }
+        };
+
+        infowindow.setContent("Closest station to current location is " + closestStation + " (" + closestDist + ") mi away");
+
 
 }
 
