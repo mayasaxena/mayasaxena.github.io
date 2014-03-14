@@ -504,15 +504,15 @@ function findClosestStation(line) {
                 var stLat = line[i].lat; 
                 var stLong = line[i].long; 
 
-                var R = 3961; // miles
+                var R = 3963; // radius of Earth in miles
                 var x1 = stLat - myLat;
                 var dLat = x1.toRad();  
-                var x2 = stLong-myLong;
+                var x2 = stLong - myLong;
                 var dLon = x2.toRad();  
-                var a = Math.sin(dLat/2) * Math.sin(dLat/2) + 
-                        Math.cos(myLat.toRad()) * Math.cos(stLat.toRad()) * 
-                        Math.sin(dLon/2) * Math.sin(dLon/2);  
-                var c = 2 * Math.atan2(Math.sqrt(a), (Math.sqrt(1-a))); 
+                var a = (Math.sin(dLat/2)) * (Math.sin(dLat/2)) + 
+                        (Math.cos(myLat.toRad())) * (Math.cos(stLat.toRad())) * 
+                        (Math.sin(dLon/2)) * (Math.sin(dLon/2));  
+                var c = 2 * (Math.atan2(Math.sqrt(a), (Math.sqrt(1-a)))); 
                 var d = R * c; 
 
                 if (d < closestDist) {
