@@ -481,7 +481,8 @@ function displayPath(line) {
 
         for (var i = line.length - 1; i >= 0; i--) {
                 pathloc = new google.maps.LatLng(line[i].lat, line[i].long);
-
+                console.log(line[i].lat);
+                console.log(line[i].long);
                 pathCoords.push(pathloc);
         };
 
@@ -493,7 +494,6 @@ function displayPath(line) {
                 strokeWeight: 2
         });
 
-        console.log(pathCoords);
         linePath.setMap(map);
 
 }
