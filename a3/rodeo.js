@@ -358,25 +358,24 @@ function readStations()
   },
 ];
 
-for (var i = stations.length; i >= 0; i++) {
-        if (stations[i].line == "Blue") {
-                blueLine.push(stations[i]);
-        }
-        else if (stations[i].line == "Orange") {
-                orangeLine.push(stations[i]);
-        }
-        else if (stations[i].line == "Red") {
-                redLine.push(stations[i]);
-
-                if (stations[i].station == "Ashmont" || 
-                    stations[i].station == "Shawmut" ||
-                    stations[i].station == "Fields Corner" ||
-                    stations[i].station == "Savin Hill" ) {
-                        redLineFork.push(stations[i]);
+        for (var i = stations.length - 1; i >= 0; i--) {
+                if (stations[i].line == "Blue") {
+                        blueLine.push(stations[i]);
                 }
-        }       
-};
+                else if (stations[i].line == "Orange") {
+                        orangeLine.push(stations[i]);
+                }
+                else if (stations[i].line == "Red") {
+                        redLine.push(stations[i]);
 
+                        if (stations[i].station == "Ashmont" || 
+                            stations[i].station == "Shawmut" ||
+                            stations[i].station == "Fields Corner" ||
+                            stations[i].station == "Savin Hill" ) {
+                                redLineFork.push(stations[i]);
+                        }
+                }   
+        };
 
 }
 
