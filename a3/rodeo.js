@@ -405,9 +405,9 @@ function renderMap()
                 infowindow.open(map, marker);
         });
 
-        google.maps.event.addListener(marker, 'content_changed', function() {
+        google.maps.event.addListener(infowindow, 'content_changed', function() {
                 infowindow.open(map, marker);
-        });
+        })
                 
         marker.setMap(map);
 
@@ -417,10 +417,12 @@ function dataReady()
 {
 
         //Accounts for error from database
-        if (mbta.status == 500) {
-                contentString = "<p id='big' Something went wrong. The page will reload</p>";
+        if(mbta.status == 500) {
+                contentString = "Something went wrong";
                 infowindow.setContent(contentString);
-                window.setTimeout(function() {location.reload()}, 3000);
+                window.setTimeout(function(){location.reload}, 3000);
+                /*alert("Something went wrong. The page will refresh.")
+                location.reload();*/
         }
 
         if(mbta.readyState == 4) {
