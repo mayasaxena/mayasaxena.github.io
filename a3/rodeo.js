@@ -11,12 +11,16 @@ var myOptions = {
 var map;
 var marker;
 var infowindow = new google.maps.InfoWindow();
-var line;
+
 var stations;
 var redLine = [];
 var orangeLine = [];
 var blueLine = [];
 var schedule;
+
+var line;
+var lineColor;
+var lineIcon;
 
 function init() {
         mbta = new XMLHttpRequest();
@@ -417,32 +421,32 @@ function dataReady()
         if(mbta.readyState == 4) {
                 schedule = JSON.parse(mbta.responseText);
 
-                displayStations(schedule.line); //blue, orange or red
+                if(schedule.line == "blue") {
+                        line = blueLine;
+                        lineIcon = "markers/blueline.png";
+                        lineColor = "#0000ff";
+                }
+                else if(line == "orange") {
+                        line = orangeLine;
+                        lineIcon = "markers/orangeline.png";
+                        lineColor = "#ffa500";
+                }
+                else if(line == "red") {
+                        line = redLine;
+                        lineIcon = "markers/redline.png";
+                        lineColor = "#ff0000";
+                }
+
+
+                displayStations(line); //blue, orange or red
+
+                findClosestStation(line);
             
         }
 }
 
-function displayStations(line) {
-        var lineToDisplay;
-        var ico;
+function displayStations(lineToDisplay) {
         var pathCoords = [];
-        var lineColor;
-
-        if(line == "blue") {
-                lineToDisplay = blueLine;
-                ico = "markers/blueline.png";
-                lineColor = "#0000ff";
-        }
-        else if(line == "orange") {
-                lineToDisplay = orangeLine;
-                ico = "markers/orangeline.png";
-                lineColor = "#ffa500";
-        }
-        else if(line == "red") {
-                lineToDisplay = redLine;
-                ico = "markers/redline.png";
-                lineColor = "#ff0000";
-        }
 
         for (var i = lineToDisplay.length - 1; i >= 0; i--) {
 
@@ -452,7 +456,7 @@ function displayStations(line) {
                 st = new google.maps.Marker({
                         position: loc,
                         title: lineToDisplay[i].station,
-                        icon: ico
+                        icon: lineIcon
                 });
 
                 var info = new google.maps.InfoWindow();
@@ -471,6 +475,7 @@ function displayStations(line) {
                 pathCoords.push(pathloc);
         };
 
+
         var linePath = new google.maps.Polyline({
                 path: pathCoords,
                 geodesic: true,
@@ -481,6 +486,10 @@ function displayStations(line) {
 
         linePath.setMap(map);
 
+
+}
+
+function findClosestStation(line) {
 
 }
 
