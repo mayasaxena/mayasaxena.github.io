@@ -26,7 +26,6 @@ var lineIcon;
 function init() {
         mbta = new XMLHttpRequest();
         mbta.open("GET", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true);
-        request = new XMLHttpRequest();
         map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
         getMyLocation();
         console.log(myLat);
@@ -423,7 +422,7 @@ function dataReady()
                 location.reload();
         }
 
-        if(mbta.readyState == 4 && request.readyState == 4) {
+        if(mbta.readyState == 4) {
                 schedule = JSON.parse(mbta.responseText);
 
                 if(schedule.line == "blue") {
@@ -508,6 +507,13 @@ function findClosestStation(line)
         //arbitrarily large for first number
         var closestDist = 100000000000000;
         var closestStation = "";
+
+        navigator.geolocation.getCurrentPosition(function(position) {
+                        myLat = position.coords.latitude;
+                        myLong = position.coords.longitude;
+                        console.log(myLat);
+                        console.log(myLong);
+        });
 
         
 
