@@ -368,7 +368,8 @@ function readStations()
                 else if (stations[i].line == "Red") {
                         redLine.push(stations[i]);
 
-                        if (stations[i].station == "Ashmont" || 
+                        if (stations[i].station == "JFK/UMass" ||
+                            stations[i].station == "Ashmont" || 
                             stations[i].station == "Shawmut" ||
                             stations[i].station == "Fields Corner" ||
                             stations[i].station == "Savin Hill" ) {
