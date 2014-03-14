@@ -28,8 +28,6 @@ function init() {
         mbta.open("GET", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true);
         map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
         getMyLocation();
-        console.log(myLat);
-        console.log(myLong);
         readStations();
         mbta.onreadystatechange = dataReady; //rval has to be a function
         mbta.send(null);
@@ -380,8 +378,6 @@ function getMyLocation()
                 navigator.geolocation.getCurrentPosition(function(position) {
                         myLat = position.coords.latitude;
                         myLong = position.coords.longitude;
-                        console.log(myLat);
-                        console.log(myLong);
                         renderMap();
                 });
         }
@@ -443,10 +439,6 @@ function dataReady()
 
 
                 displayStations(line); //blue, orange or red
-                console.log("before findClosestStation");
-                console.log(myLat);
-                console.log(myLong);
-
                 findClosestStation(line);
             
         }
@@ -511,10 +503,6 @@ function findClosestStation(line)
         navigator.geolocation.getCurrentPosition(function(position) {
                 myLat = position.coords.latitude;
                 myLong = position.coords.longitude;
-                console.log("within find closest");
-                console.log(myLat);
-                console.log(myLong);
-        
 
                 for (var i = line.length - 1; i >= 0; i--) {
                         var stLat = line[i].lat; 
