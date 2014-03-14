@@ -35,45 +35,9 @@ function readStations()
     stations = [
   {
     "line":"Blue",
-    "station":"Airport",
-    "lat":42.374262,
-    "long":-71.030395
-  },
-  {
-    "line":"Blue",
-    "station":"Aquarium",
-    "lat":42.359784,
-    "long":-71.051652
-  },
-  {
-    "line":"Blue",
-    "station":"Beachmont",
-    "lat":42.39754234,
-    "long":-70.99231944
-  },
-  {
-    "line":"Blue",
-    "station":"Bowdoin",
-    "lat":42.361365,
-    "long":-71.062037
-  },
-  {
-    "line":"Blue",
-    "station":"Government Center",
-    "lat":42.359705,
-    "long":-71.05921499999999
-  },
-  {
-    "line":"Blue",
-    "station":"Maverick",
-    "lat":42.36911856,
-    "long":-71.03952958000001
-  },
-  {
-    "line":"Blue",
-    "station":"Orient Heights",
-    "lat":42.386867,
-    "long":-71.00473599999999
+    "station":"Wonderland",
+    "lat":42.41342,
+    "long":-70.991648
   },
   {
     "line":"Blue",
@@ -83,9 +47,9 @@ function readStations()
   },
   {
     "line":"Blue",
-    "station":"State Street",
-    "lat":42.358978,
-    "long":-71.057598
+    "station":"Beachmont",
+    "lat":42.39754234,
+    "long":-70.99231944
   },
   {
     "line":"Blue",
@@ -95,9 +59,9 @@ function readStations()
   },
   {
     "line":"Blue",
-    "station":"Wonderland",
-    "lat":42.41342,
-    "long":-70.991648
+    "station":"Orient Heights",
+    "lat":42.386867,
+    "long":-71.00473599999999
   },
   {
     "line":"Blue",
@@ -106,70 +70,40 @@ function readStations()
     "long":-71.02286539000001
   },
   {
-    "line":"Orange",
-    "station":"Back Bay",
-    "lat":42.34735,
-    "long":-71.075727
+    "line":"Blue",
+    "station":"Airport",
+    "lat":42.374262,
+    "long":-71.030395
   },
   {
-    "line":"Orange",
-    "station":"Chinatown",
-    "lat":42.352547,
-    "long":-71.062752
+    "line":"Blue",
+    "station":"Maverick",
+    "lat":42.36911856,
+    "long":-71.03952958000001
   },
   {
-    "line":"Orange",
-    "station":"Community College",
-    "lat":42.373622,
-    "long":-71.06953300000001
+    "line":"Blue",
+    "station":"Aquarium",
+    "lat":42.359784,
+    "long":-71.051652
   },
   {
-    "line":"Orange",
-    "station":"Downtown Crossing",
-    "lat":42.355518,
-    "long":-71.060225
+    "line":"Blue",
+    "station":"State Street",
+    "lat":42.358978,
+    "long":-71.057598
   },
   {
-    "line":"Orange",
-    "station":"Forest Hills",
-    "lat":42.300523,
-    "long":-71.113686
+    "line":"Blue",
+    "station":"Government Center",
+    "lat":42.359705,
+    "long":-71.05921499999999
   },
   {
-    "line":"Orange",
-    "station":"Green Street",
-    "lat":42.310525,
-    "long":-71.10741400000001
-  },
-  {
-    "line":"Orange",
-    "station":"Haymarket",
-    "lat":42.363021,
-    "long":-71.05829
-  },
-  {
-    "line":"Orange",
-    "station":"Jackson Square",
-    "lat":42.323132,
-    "long":-71.099592
-  },
-  {
-    "line":"Orange",
-    "station":"Malden Center",
-    "lat":42.426632,
-    "long":-71.07411
-  },
-  {
-    "line":"Orange",
-    "station":"Mass Ave",
-    "lat":42.341512,
-    "long":-71.083423
-  },
-  {
-    "line":"Orange",
-    "station":"North Station",
-    "lat":42.365577,
-    "long":-71.06129
+    "line":"Blue",
+    "station":"Bowdoin",
+    "lat":42.361365,
+    "long":-71.062037
   },
   {
     "line":"Orange",
@@ -179,27 +113,15 @@ function readStations()
   },
   {
     "line":"Orange",
-    "station":"Roxbury Crossing",
-    "lat":42.331397,
-    "long":-71.095451
+    "station":"Malden Center",
+    "lat":42.426632,
+    "long":-71.07411
   },
   {
     "line":"Orange",
-    "station":"Ruggles",
-    "lat":42.336377,
-    "long":-71.088961
-  },
-  {
-    "line":"Orange",
-    "station":"State Street",
-    "lat":42.358978,
-    "long":-71.057598
-  },
-  {
-    "line":"Orange",
-    "station":"Stony Brook",
-    "lat":42.317062,
-    "long":-71.104248
+    "station":"Wellington",
+    "lat":42.40237,
+    "long":-71.077082
   },
   {
     "line":"Orange",
@@ -209,15 +131,93 @@ function readStations()
   },
   {
     "line":"Orange",
+    "station":"Community College",
+    "lat":42.373622,
+    "long":-71.06953300000001
+  },
+  {
+    "line":"Orange",
+    "station":"North Station",
+    "lat":42.365577,
+    "long":-71.06129
+  },
+  {
+    "line":"Orange",
+    "station":"Haymarket",
+    "lat":42.363021,
+    "long":-71.05829
+  },
+  {
+    "line":"Orange",
+    "station":"State Street",
+    "lat":42.358978,
+    "long":-71.057598
+  },
+  {
+    "line":"Orange",
+    "station":"Downtown Crossing",
+    "lat":42.355518,
+    "long":-71.060225
+  },
+  {
+    "line":"Orange",
+    "station":"Chinatown",
+    "lat":42.352547,
+    "long":-71.062752
+  },
+  {
+    "line":"Orange",
     "station":"Tufts Medical",
     "lat":42.349662,
     "long":-71.063917
   },
   {
     "line":"Orange",
-    "station":"Wellington",
-    "lat":42.40237,
-    "long":-71.077082
+    "station":"Back Bay",
+    "lat":42.34735,
+    "long":-71.075727
+  },
+  {
+    "line":"Orange",
+    "station":"Mass Ave",
+    "lat":42.341512,
+    "long":-71.083423
+  },
+  {
+    "line":"Orange",
+    "station":"Ruggles",
+    "lat":42.336377,
+    "long":-71.088961
+  },
+  {
+    "line":"Orange",
+    "station":"Roxbury Crossing",
+    "lat":42.331397,
+    "long":-71.095451
+  },
+  {
+    "line":"Orange",
+    "station":"Jackson Square",
+    "lat":42.323132,
+    "long":-71.099592
+  },
+  {
+    "line":"Orange",
+    "station":"Stony Brook",
+    "lat":42.317062,
+    "long":-71.104248
+  },
+  {
+    "line":"Orange",
+    "station":"Green Street",
+    "lat":42.310525,
+    "long":-71.10741400000001
+  },
+  {
+    "line":"Orange",
+    "station":"Forest Hills",
+    "lat":42.300523,
+    "long":-71.113686
   },
   {
     "line":"Red",
@@ -227,87 +227,9 @@ function readStations()
   },
   {
     "line":"Red",
-    "station":"Andrew",
-    "lat":42.330154,
-    "long":-71.057655
-  },
-  {
-    "line":"Red",
-    "station":"Ashmont",
-    "lat":42.284652,
-    "long":-71.06448899999999
-  },
-  {
-    "line":"Red",
-    "station":"Braintree",
-    "lat":42.2078543,
-    "long":-71.0011385
-  },
-  {
-    "line":"Red",
-    "station":"Broadway",
-    "lat":42.342622,
-    "long":-71.056967
-  },
-  {
-    "line":"Red",
-    "station":"Central Square",
-    "lat":42.365486,
-    "long":-71.103802
-  },
-  {
-    "line":"Red",
-    "station":"Charles/MGH",
-    "lat":42.361166,
-    "long":-71.070628
-  },
-  {
-    "line":"Red",
     "station":"Davis",
     "lat":42.39674,
     "long":-71.121815
-  },
-  {
-    "line":"Red",
-    "station":"Downtown Crossing",
-    "lat":42.355518,
-    "long":-71.060225
-  },
-  {
-    "line":"Red",
-    "station":"Fields Corner",
-    "lat":42.300093,
-    "long":-71.061667
-  },
-  {
-    "line":"Red",
-    "station":"Harvard Square",
-    "lat":42.373362,
-    "long":-71.118956
-  },
-  {
-    "line":"Red",
-    "station":"JFK/UMass",
-    "lat":42.320685,
-    "long":-71.052391
-  },
-  {
-    "line":"Red",
-    "station":"Kendall/MIT",
-    "lat":42.36249079,
-    "long":-71.08617653
-  },
-  {
-    "line":"Red",
-    "station":"North Quincy",
-    "lat":42.275275,
-    "long":-71.029583
-  },
-  {
-    "line":"Red",
-    "station":"Park Street",
-    "lat":42.35639457,
-    "long":-71.0624242
   },
   {
     "line":"Red",
@@ -317,27 +239,39 @@ function readStations()
   },
   {
     "line":"Red",
-    "station":"Quincy Adams",
-    "lat":42.233391,
-    "long":-71.007153
+    "station":"Harvard Square",
+    "lat":42.373362,
+    "long":-71.118956
   },
   {
     "line":"Red",
-    "station":"Quincy Center",
-    "lat":42.251809,
-    "long":-71.005409
+    "station":"Central Square",
+    "lat":42.365486,
+    "long":-71.103802
   },
   {
     "line":"Red",
-    "station":"Savin Hill",
-    "lat":42.31129,
-    "long":-71.053331
+    "station":"Kendall/MIT",
+    "lat":42.36249079,
+    "long":-71.08617653
   },
   {
     "line":"Red",
-    "station":"Shawmut",
-    "lat":42.29312583,
-    "long":-71.06573796000001
+    "station":"Charles/MGH",
+    "lat":42.361166,
+    "long":-71.070628
+  },
+  {
+    "line":"Red",
+    "station":"Park Street",
+    "lat":42.35639457,
+    "long":-71.0624242
+  },
+  {
+    "line":"Red",
+    "station":"Downtown Crossing",
+    "lat":42.355518,
+    "long":-71.060225
   },
   {
     "line":"Red",
@@ -347,10 +281,76 @@ function readStations()
   },
   {
     "line":"Red",
+    "station":"Broadway",
+    "lat":42.342622,
+    "long":-71.056967
+  },
+  {
+    "line":"Red",
+    "station":"Andrew",
+    "lat":42.330154,
+    "long":-71.057655
+  },
+  {
+    "line":"Red",
+    "station":"JFK/UMass",
+    "lat":42.320685,
+    "long":-71.052391
+  },
+  {
+    "line":"Red",
+    "station":"North Quincy",
+    "lat":42.275275,
+    "long":-71.029583
+  },
+  {
+    "line":"Red",
     "station":"Wollaston",
     "lat":42.2665139,
     "long":-71.02033
   }
+  {
+    "line":"Red",
+    "station":"Quincy Center",
+    "lat":42.251809,
+    "long":-71.005409
+  },
+  {
+    "line":"Red",
+    "station":"Quincy Adams",
+    "lat":42.233391,
+    "long":-71.007153
+  },
+  {
+    "line":"Red",
+    "station":"Braintree",
+    "lat":42.2078543,
+    "long":-71.0011385
+  },
+  {
+    "line":"Red",
+    "station":"Savin Hill",
+    "lat":42.31129,
+    "long":-71.053331
+  },
+  {
+    "line":"Red",
+    "station":"Fields Corner",
+    "lat":42.300093,
+    "long":-71.061667
+  },
+  {
+    "line":"Red",
+    "station":"Shawmut",
+    "lat":42.29312583,
+    "long":-71.06573796000001
+  },
+  {
+    "line":"Red",
+    "station":"Ashmont",
+    "lat":42.284652,
+    "long":-71.06448899999999
+  },
 ];
 
 for (var i = stations.length - 1; i >= 0; i--) {
