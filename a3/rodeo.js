@@ -421,7 +421,8 @@ function dataReady()
         if(mbta.status == 500) {
                 contentString = "Something went wrong";
                 infowindow.setContent(contentString);
-                window.setTimeout(function(){location.reload()},3000);
+                alert("changed content");
+                //window.setTimeout(function(){location.reload()},3000);
                 /*alert("Something went wrong. The page will refresh.")
                 location.reload();*/
         }
