@@ -353,7 +353,10 @@ function readStations()
   }
 ];
 
-    console.log(stations[0].line);
+    for (var i = stations.length - 1; i >= 0; i--) {
+        console.log(stations[i].line);
+    };
+    
 
 }
 
