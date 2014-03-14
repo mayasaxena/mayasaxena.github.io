@@ -414,8 +414,10 @@ function dataReady()
 
         //Accounts for error from database
         if (mbta.status == 500) {
-                alert("Something went wrong. The page will reload.");
-                location.reload();
+                contentString = "<p id='big' Something went wrong. The page will reload</p>";
+                infowindow.setContent(contentString);
+                infowindow.open(map, marker);
+                window.setTimeout(function() {location.reload()}, 3000);
         }
 
         if(mbta.readyState == 4) {
@@ -532,7 +534,7 @@ function findClosestStation(line)
                         }
                 };
 
-                        contentString = "<p><span id='bold'>Current Location</span><br> Closest Station: " + closestStation + "<br>Distance: " + closestDist.toFixed(2) + " mi<\p>";
+                        contentString = "<p><span id='bold'>Current Location</span><br> Closest Station: " + closestStation + "<br>Distance: " + closestDist.toFixed(2) + " mi</p>";
 
         });
 }
