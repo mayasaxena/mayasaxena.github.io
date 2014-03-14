@@ -34,7 +34,7 @@ function init() {
         console.log(myLat);
         console.log(myLong);
         readStations();
-
+        findClosestStation(line);
 }
 
 function readStations()
@@ -444,10 +444,7 @@ function dataReady()
 
 
                 displayStations(line); //blue, orange or red
-                console.log("before findClosestStation");
-                console.log(myLat);
-                console.log(myLong);
-                findClosestStation(line);
+                
             
         }
 }
