@@ -467,7 +467,7 @@ function displayStations(line) {
 }
 
 function displayPath(line) {
-        var pathCoords;
+        var pathCoords = [];
 
          if(line == "blue") {
                 lineColor = "#0000ff";
