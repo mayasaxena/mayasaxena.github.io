@@ -143,6 +143,10 @@ function dataReady() {
 
         if(mbta.readyState == 4) {
                 schedule = JSON.parse(mbta.responseText);
+
+                if (schedule["line"] == "red") {
+                    console.log(redLine);
+                }
         }
 
 }
