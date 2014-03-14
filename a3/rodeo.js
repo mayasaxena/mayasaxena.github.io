@@ -493,6 +493,7 @@ function displayPath(line) {
                 strokeWeight: 2
         });
 
+        console.log(pathCoords);
         linePath.setMap(map);
 
 }
