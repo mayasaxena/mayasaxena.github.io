@@ -490,15 +490,16 @@ function displayStations(lineToDisplay) {
 
 }
 
+Number.prototype.toRad = function() {
+           return this * Math.PI / 180;
+        }
+
 function findClosestStation(line) {
 
         //arbitrarily large for first number
         var closestDist = 100000000000000;
         var closestStation = "";
 
-        Number.prototype.toRad = function() {
-           return this * Math.PI / 180;
-        }
 
         for (var i = line.length - 1; i >= 0; i--) {
                 var stLat = line[i].lat; 
