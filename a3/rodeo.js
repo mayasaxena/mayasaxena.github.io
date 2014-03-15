@@ -630,7 +630,6 @@ function capitaliseFirstLetter(string)
 
 function toMin(sec)
 {
-	console.log(sec);
 	var minutes = Math.floor(sec / 60);
 	var seconds = sec - minutes * 60;
 
@@ -644,7 +643,7 @@ function toMin(sec)
 	if (seconds < 10) {
 		minString += "0";
 	}
-	minString += seconds;
+	minString += seconds + " min";
 
 	return minString;
 
