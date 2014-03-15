@@ -610,7 +610,7 @@ function makeScheduleString(stat)
 				dest = trip.Destination;
 
 				str += "<tr>\
-							<td>" + line.line + "</td>\
+							<td>" + capitaliseFirstLetter(scheduleData.line) + "</td>\
 							<td>" + dest + "</td>\
 							<td>" + seconds + "</td>\
 						</tr>";
@@ -621,5 +621,10 @@ function makeScheduleString(stat)
 	str += "</table>";
 	return str;
 
+}
+
+function capitaliseFirstLetter(string)
+{
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 

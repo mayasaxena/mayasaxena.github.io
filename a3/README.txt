@@ -20,3 +20,6 @@ http://stackoverflow.com/questions/14560999/using-the-haversine-formula-in-javas
 
 Thanks to StackOverflow for help with putting the correct string in the infowindow:
 http://stackoverflow.com/questions/7402667/google-maps-multiple-markers-1-infowindow-problem
+
+Thanks to StackOverflow for help with capitalizing the first letter in a string:
+http://stackoverflow.com/questions/1026069/capitalize-the-first-letter-of-string-in-javascript
