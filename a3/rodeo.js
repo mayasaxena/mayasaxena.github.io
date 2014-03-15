@@ -579,7 +579,7 @@ function findClosestStation(line)
                         }
                 };
 
-                contentString = "<p><span class='bold'>Current Location</span>\
+                contentString = "<p><span class='b'>Current Location</span>\
                                  <br>Closest Station: " + 
                                  closestStation + "<br>Distance: " + 
                                  closestDist.toFixed(2) + " mi</p>";
@@ -594,7 +594,7 @@ function makeScheduleString(stat)
 	var trip;
 	var seconds;
 	var dest;
-	str += "<span class='bold'>" + stat + "</span><br>\
+	str += "<span class='b'>" + stat + "</span><br>\
 			<table> \
 			<tr> \
 				<th>Line</th>\
