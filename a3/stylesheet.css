@@ -6,5 +6,6 @@ span.b {
 }
 
 table, th, td {
-        border:2px solid black;
+        border-style:solid;
+        border-width:1px;
 }
