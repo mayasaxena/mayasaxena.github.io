@@ -473,14 +473,14 @@ function displayStations(lineToDisplay)
                 });
 
 
-
+                alert(lineToDisplay[i].station);
                 scheduleString = makeScheduleString(lineToDisplay[i].station);
 
 
                 var info = new google.maps.InfoWindow();
 
                 google.maps.event.addListener(st, 'click', function() {
-                        info.setContent(this.scheduleString);
+                        info.setContent(scheduleString);
                         info.open(map, this);
                 });
 
@@ -587,15 +587,14 @@ function findClosestStation(line)
         });
 }
 
-function makeScheduleString(station)
+function makeScheduleString(stat)
 {
 
-	console.log(station);
 	var str = "";
 	var trip;
 	var seconds;
 	var dest;
-	str += "<span class='bold'>" + station + "</span><br>\
+	str += "<span class='bold'>" + stat + "</span><br>\
 			<table> \
 			<tr> \
 				<th>Line</th>\
@@ -606,7 +605,7 @@ function makeScheduleString(station)
 	for (var i = scheduleData.schedule.length - 1; i >= 0; i--) {
 		trip = scheduleData.schedule[i];
 		for (var j = trip.length - 1; j >= 0; j--) {
-			if (trip.Predictions[j].Stop == station) {
+			if (trip.Predictions[j].Stop == stat) {
 				seconds = trip.Predictions[j].Seconds;
 				dest = trip.Destination;
 
@@ -620,7 +619,6 @@ function makeScheduleString(station)
 	};
 
 	str += "</table>";
-	alert(str);
 	return str;
 
 }
