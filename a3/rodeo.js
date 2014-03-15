@@ -473,13 +473,14 @@ function displayStations(lineToDisplay)
                 });
 
 
+
                 scheduleString = makeScheduleString(lineToDisplay[i].station);
 
 
                 var info = new google.maps.InfoWindow();
 
                 google.maps.event.addListener(st, 'click', function() {
-                        info.setContent(scheduleString);
+                        info.setContent(this.scheduleString);
                         info.open(map, this);
                 });
 
