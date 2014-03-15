@@ -604,6 +604,7 @@ function makeScheduleString(station)
 		trip = scheduleData.schedule[i];
 		for (var j = trip.length - 1; j >= 0; j--) {
 			console.log(trip.Predictions[j].Stop);
+			console.log(station);
 			if (trip.Predictions[j].Stop == station) {
 				seconds = trip.Predictions[j].Seconds;
 				dest = trip.Destination;
