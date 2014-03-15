@@ -612,7 +612,7 @@ function makeScheduleString(stat)
 				str += "<tr>\
 							<td>" + capitaliseFirstLetter(scheduleData.line) + "</td>\
 							<td>" + dest + "</td>\
-							<td>" + seconds + "</td>\
+							<td>" + toMin(seconds) + "</td>\
 						</tr>";
 			}		
 		};
@@ -628,3 +628,23 @@ function capitaliseFirstLetter(string)
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+function toMin(sec)
+{
+	var minutes = Math.floor(sec / 60);
+	var seconds = sec - minutes * 60;
+
+	var minString = "";
+
+	if (minutes < 10) {
+		minString += "0";
+	}
+	minString += minutes + ":"
+
+	if (seconds < 10) {
+		minString += "0";
+	}
+	minString += seconds;
+
+	return minString;
+
+}
