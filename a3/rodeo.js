@@ -598,7 +598,7 @@ function makeScheduleString(station)
 				<th>Line</th>\
 				<th>Destination</th>\
 				<th>Time Remaining</th>
-			</tr>"
+			</tr>";
 				
 	for (var i = scheduleData.schedule.length - 1; i >= 0; i--) {
 		trip = scheduleData.schedule[i];
@@ -611,12 +611,12 @@ function makeScheduleString(station)
 							<td>" + scheduleData.line + "</td>\
 							<td>" + dest + "</td>\
 							<td>" + seconds + "</td>\
-						</tr>"
+						</tr>";
 			}		
 		};
 	};
 
-	str += "</table>"
+	str += "</table>";
 
 	return str;
 
