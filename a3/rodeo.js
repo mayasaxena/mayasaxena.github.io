@@ -472,7 +472,7 @@ function displayStations(lineToDisplay)
                         icon: lineIcon
                 });
 
-
+                console.log(lineToDisplay[i].station);
                 scheduleString = makeScheduleString(lineToDisplay[i].station);
 
 
