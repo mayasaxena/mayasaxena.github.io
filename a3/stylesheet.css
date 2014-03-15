@@ -5,14 +5,8 @@ span.b {
         font-weight: bold;
 }
 
-table, th{
+table, th, td{
         border-style:solid;
         border-width:1px;
-        border-spacing: 0px;
-}
-
-td {
-        border-style:solid;
-        border-width:.5px;
         border-spacing: 0px;
 }
