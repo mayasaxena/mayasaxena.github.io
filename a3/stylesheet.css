@@ -8,4 +8,5 @@ span.b {
 table, th, td {
         border-style:solid;
         border-width:1px;
+        border-spacing: 0px;
 }
