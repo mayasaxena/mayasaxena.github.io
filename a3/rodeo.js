@@ -610,7 +610,7 @@ function makeScheduleString(stat)
 				dest = trip.Destination;
 
 				str += "<tr>\
-							<td>" + line + "</td>\
+							<td>" + line.line + "</td>\
 							<td>" + dest + "</td>\
 							<td>" + seconds + "</td>\
 						</tr>";
