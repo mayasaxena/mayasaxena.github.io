@@ -597,7 +597,7 @@ function makeScheduleString(station)
 			<tr> \
 				<th>Line</th>\
 				<th>Destination</th>\
-				<th>Time Remaining</th>
+				<th>Time Remaining</th>\
 			</tr>";
 				
 	for (var i = scheduleData.schedule.length - 1; i >= 0; i--) {
