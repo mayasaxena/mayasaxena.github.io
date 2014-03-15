@@ -618,6 +618,7 @@ function makeScheduleString(station)
 
 	str += "</table>";
 
+	console.log(str);
 	return str;
 
 }
