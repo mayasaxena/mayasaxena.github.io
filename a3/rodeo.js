@@ -473,7 +473,7 @@ function displayStations(lineToDisplay)
                 });
 
 
-                scheduleString = makeScheduleTable(lineToDisplay[i].station);
+                scheduleString = makeScheduleString(lineToDisplay[i].station);
 
 
                 var info = new google.maps.InfoWindow();
