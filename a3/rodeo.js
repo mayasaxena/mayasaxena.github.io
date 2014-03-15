@@ -619,7 +619,7 @@ function makeScheduleString(station)
 	};
 
 	str += "</table>";
-
+	alert(str);
 	return str;
 
 }
