@@ -17,3 +17,6 @@ http://www.benjaminkeen.com/2007/01/
 
 Haversine Formula code adapted from: 
 http://stackoverflow.com/questions/14560999/using-the-haversine-formula-in-javascript
+
+Thanks to StackOverflow for help with putting the correct string in the infowindow:
+http://stackoverflow.com/questions/7402667/google-maps-multiple-markers-1-infowindow-problem

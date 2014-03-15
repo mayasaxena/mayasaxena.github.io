@@ -477,10 +477,12 @@ function displayStations(lineToDisplay)
 
                 var info = new google.maps.InfoWindow();
 
-                google.maps.event.addListener(st, 'click', function() {
-                        info.setContent(scheduleString);
-                        info.open(map, this);
-                });
+                google.maps.event.addListener(st, 'click', function(content) {
+    				return function(){
+        				infowindow.setContent(content);//set the content
+        				infowindow.open(map,this);
+    				}
+				}(scheduleString));
 
 
                 st.setMap(map);
@@ -617,7 +619,6 @@ function makeScheduleString(stat)
 	};
 
 	str += "</table>";
-	console.log(str);
 	return str;
 
 }
