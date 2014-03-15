@@ -605,6 +605,8 @@ function makeScheduleString(stat)
 	for (var i = scheduleData.schedule.length - 1; i >= 0; i--) {
 		trip = scheduleData.schedule[i];
 		for (var j = trip.length - 1; j >= 0; j--) {
+			console.log(trip.Predictions[j].Stop);
+			console.log(stat);
 			if (trip.Predictions[j].Stop == stat) {
 				seconds = trip.Predictions[j].Seconds;
 				dest = trip.Destination;
@@ -619,7 +621,6 @@ function makeScheduleString(stat)
 	};
 
 	str += "</table>";
-	console.log(str);
 	return str;
 
 }
