@@ -588,11 +588,13 @@ function findClosestStation(line)
 
 function makeScheduleString(station)
 {
+
+	console.log(station);
 	var str = "";
 	var trip;
 	var seconds;
 	var dest;
-	str += "<p><span class='bold'>" + station + "</span></p>\
+	str += "<span class='bold'>" + station + "</span><br>\
 			<table> \
 			<tr> \
 				<th>Line</th>\
@@ -603,8 +605,6 @@ function makeScheduleString(station)
 	for (var i = scheduleData.schedule.length - 1; i >= 0; i--) {
 		trip = scheduleData.schedule[i];
 		for (var j = trip.length - 1; j >= 0; j--) {
-			console.log(trip.Predictions[j].Stop);
-			alert(station);
 			if (trip.Predictions[j].Stop == station) {
 				seconds = trip.Predictions[j].Seconds;
 				dest = trip.Destination;
