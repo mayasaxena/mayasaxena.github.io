@@ -473,7 +473,6 @@ function displayStations(lineToDisplay)
                 });
 
 
-                alert(lineToDisplay[i].station);
                 scheduleString = makeScheduleString(lineToDisplay[i].station);
 
 
