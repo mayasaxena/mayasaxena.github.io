@@ -619,6 +619,7 @@ function makeScheduleString(stat)
 	};
 
 	str += "</table>";
+	console.log(str);
 	return str;
 
 }
