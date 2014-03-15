@@ -594,7 +594,7 @@ function makeScheduleString(stat)
 	var trip;
 	var seconds;
 	var dest;
-	str += "<span class='bold'>" + stat + "</span><br>\
+	str += "<p><span class='bold'>" + stat + "</span></p>\
 			<table> \
 			<tr> \
 				<th>Line</th>\
