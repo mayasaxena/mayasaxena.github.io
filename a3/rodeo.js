@@ -592,7 +592,7 @@ function makeScheduleString(station)
 	var trip;
 	var seconds;
 	var dest;
-	str += "<p><span class='bold'>" + station + "</span><br>\
+	str += "<p><span class='bold'>" + station + "</span></p>\
 			<table> \
 			<tr> \
 				<th>Line</th>\
@@ -603,7 +603,7 @@ function makeScheduleString(station)
 	for (var i = scheduleData.schedule.length - 1; i >= 0; i--) {
 		trip = scheduleData.schedule[i];
 		for (var j = trip.length - 1; j >= 0; j--) {
-			alert(trip.Predictions[j].Stop);
+			console.log(trip.Predictions[j].Stop);
 			if (trip.Predictions[j].Stop == station) {
 				alert(trip.Predictions[j].Stop);
 				seconds = trip.Predictions[j].Seconds;
