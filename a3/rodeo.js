@@ -18,7 +18,7 @@ var redLine = [];
 var redLineFork = [];
 var orangeLine = [];
 var blueLine = [];
-var schedule;
+var scheduleData;
 
 var line;
 var lineColor;
@@ -431,19 +431,19 @@ function dataReady()
         }
 
         if(mbta.readyState == 4) {
-                schedule = JSON.parse(mbta.responseText);
+                scheduleData = JSON.parse(mbta.responseText);
 
-                if(schedule.line == "blue") {
+                if(scheduleData.line == "blue") {
                         line = blueLine;
                         lineIcon = "markers/blueline.png";
                         lineColor = "#0000ff";
                 }
-                else if(schedule.line == "orange") {
+                else if(scheduleData.line == "orange") {
                         line = orangeLine;
                         lineIcon = "markers/orangeline.png";
                         lineColor = "#ffa500";
                 }
-                else if(schedule.line == "red") {
+                else if(scheduleData.line == "red") {
                         line = redLine;
                         lineIcon = "markers/redline.png";
                         lineColor = "#ff0000";
@@ -473,7 +473,7 @@ function displayStations(lineToDisplay)
                 });
 
 
-                scheduleString = makeScheduleTable();
+                scheduleString = makeScheduleTable(lineToDisplay[i].station);
 
 
                 var info = new google.maps.InfoWindow();
@@ -578,7 +578,7 @@ function findClosestStation(line)
                         }
                 };
 
-                contentString = "<p><span id='bold'>Current Location</span>\
+                contentString = "<p><span class='bold'>Current Location</span>\
                                  <br>Closest Station: " + 
                                  closestStation + "<br>Distance: " + 
                                  closestDist.toFixed(2) + " mi</p>";
@@ -586,12 +586,39 @@ function findClosestStation(line)
         });
 }
 
-function makeScheduleString()
+function makeScheduleString(station)
 {
 	var str = "";
-	str += "<table>"
-	for (var i = schedule.schedule.length - 1; i >= 0; i--) {
-		str += schedule.schedule[i].Destination
+	var trip;
+	var seconds;
+	var dest;
+	str += "<p>span class='bold'>" + station + "<br>\
+			<table> \
+			<tr> \
+				<th>Line</th>\
+				<th>Destination</th>\
+				<th>Time Remaining</th>
+			</tr>"
+				
+	for (var i = scheduleData.schedule.length - 1; i >= 0; i--) {
+		trip = scheduleData.schedule[i];
+		for (var j = trip.length - 1; j >= 0; j--) {
+			if (trip.Predictions[j].Stop == station) {
+				seconds = trip.Predictions[j].Seconds;
+				dest = trip.Destination;
+
+				str += "<tr>\
+							<td>" + scheduleData.line + "</td>\
+							<td>" + dest + "</td>\
+							<td>" + seconds + "</td>\
+						</tr>"
+			}		
+		};
 	};
+
+	str += "</table>"
+
+	return str;
+
 }
 
