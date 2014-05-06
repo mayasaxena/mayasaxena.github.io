@@ -38,8 +38,7 @@ h3
 
 span.bold
 {
-        font-weight:bold;
-
+        -webkit-text-stroke: .025em black;
 }
 
 a
