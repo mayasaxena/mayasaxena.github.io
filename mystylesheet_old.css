@@ -1,0 +1,181 @@
+*
+{
+        margin:0;
+        padding:0;
+}
+
+html, body 
+{
+        min-height: 100%;
+        height: auto;
+
+}
+
+body
+{
+        font-size:12pt;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+
+}
+
+#gradient
+{
+
+/* fallback */
+        background-color: #CCFFC8;
+        background: -webkit-gradient(linear, center top, center bottom, from(#CCFFC8), to(#A8F5A2));
+
+        
+}
+
+
+/* HEADER */
+
+header
+{
+        height:120px;
+        line-height:120px;
+        width:100%;
+
+        background-color:#66FFCC;
+
+}
+
+
+h1 a
+{
+        color:#FEFEFE;
+        padding-left:60px;
+        text-shadow:1px 1px 3px #888888;
+        text-align:left;
+        vertical-align:middle;
+        text-decoration: none;
+
+}
+
+
+/* NAVBAR */
+
+nav
+{
+        width:100%;
+        margin:0 auto;
+        overflow:hidden;
+        float:left;
+
+        background-color:#33CCCC;       
+        background: -webkit-gradient(linear, center top, center bottom, from(#33CCCC), to(#1AB0B0));
+
+}
+
+nav ul
+{       
+        list-style:none;
+
+}
+    
+
+nav li a
+{
+        float:left;
+        width:25%;
+        display:block;
+        padding-top: .33em;
+        padding-bottom: .33em;
+
+        color:#FEFEFE;
+        text-shadow:1px 1px 3px #888888;
+        text-decoration:none;
+        text-align:center;
+        vertical-align:middle;
+        font-size: 14pt;
+}
+
+nav a:hover, nav a:active
+{
+        background-color:#339999;
+}
+
+/* ALL PAGES */
+
+
+div.main
+{
+
+        margin:60px;
+        width:70%;
+}
+
+h3
+{
+        background-color:#33CCCC;
+        padding:5px;
+        color:#FEFEFE;
+        text-shadow:1px 1px 3px #888888;
+        font-weight:normal;
+        border-radius: 5px;
+        font-size: 14pt;
+}
+
+
+span.bold
+{
+        font-weight:bold;
+
+}
+
+p
+{
+        font-weight:normal;
+        margin:20px;
+        font-size: 12pt;
+ }
+
+.main ul
+{
+        font-weight:normal;
+        font-size: 12pt;
+        margin:20px;
+        padding-left:10%;
+}
+
+
+/* HOMEPAGE */
+
+
+
+img.default_pic
+{
+        box-shadow:5px 5px 5px #888888;
+        max-width:60%;
+        max-height:60%;
+        border:10px;
+        position: absolute;
+        border-radius: 5px;
+}
+
+
+
+
+div.homepage_text
+{
+        padding:40px;
+        text-align:center;
+        margin-left:70%;
+}
+
+/* PORTFOLIO */
+
+
+
+
+
+
+
+
+
+
+
+
+

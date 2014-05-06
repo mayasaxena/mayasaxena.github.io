@@ -14,115 +14,38 @@ html, body
 body
 {
         font-size:12pt;
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
+        font-family: 'Gafata', Helvetica, Arial, sans-serif;
+        background-image:url("knitting250px/knitting250px.png");
 
 }
 
-#gradient
+h1 {
+        padding: .5em;
+}
+
+h2
 {
-
-/* fallback */
-        background-color: #CCFFC8;
-        background: -webkit-gradient(linear, center top, center bottom, from(#CCFFC8), to(#A8F5A2));
-
-        
-}
-
-
-/* HEADER */
-
-header
-{
-        height:120px;
-        line-height:120px;
-        width:100%;
-
-        background-color:#66FFCC;
-
-}
-
-
-h1 a
-{
-        color:#FEFEFE;
-        padding-left:60px;
-        text-shadow:1px 1px 3px #888888;
-        text-align:left;
-        vertical-align:middle;
-        text-decoration: none;
-
-}
-
-
-/* NAVBAR */
-
-nav
-{
-        width:100%;
-        margin:0 auto;
-        overflow:hidden;
-        float:left;
-
-        background-color:#33CCCC;       
-        background: -webkit-gradient(linear, center top, center bottom, from(#33CCCC), to(#1AB0B0));
-
-}
-
-nav ul
-{       
-        list-style:none;
-
-}
-    
-
-nav li a
-{
-        float:left;
-        width:25%;
-        display:block;
-        padding-top: .33em;
-        padding-bottom: .33em;
-
-        color:#FEFEFE;
-        text-shadow:1px 1px 3px #888888;
-        text-decoration:none;
-        text-align:center;
-        vertical-align:middle;
-        font-size: 14pt;
-}
-
-nav a:hover, nav a:active
-{
-        background-color:#339999;
-}
-
-/* ALL PAGES */
-
-
-div.main
-{
-
-        margin:60px;
-        width:70%;
+        text-align: center;
+        padding: 2em;
 }
 
 h3
 {
-        background-color:#33CCCC;
-        padding:5px;
-        color:#FEFEFE;
-        text-shadow:1px 1px 3px #888888;
-        font-weight:normal;
-        border-radius: 5px;
+        padding: .5em;
         font-size: 14pt;
+        background-color: #33CCCC;
 }
-
 
 span.bold
 {
         font-weight:bold;
 
+}
+
+a
+{
+        color: black;
+        text-decoration: none;
 }
 
 p
@@ -131,6 +54,95 @@ p
         margin:20px;
         font-size: 12pt;
  }
+
+
+
+/* HEADER */
+header
+{       
+        height: 6em;
+        line-height: 6em;
+        width: 100%;
+        position: relative;
+        background-color: rgba(255, 255, 255, .7);
+}
+
+.header_content {
+        width: 75%;
+        height: 100%;
+        margin:auto;
+        position: relative;
+}
+
+
+.header_text
+{
+        font-size: 25px;
+        float: left;
+        width: 30%;
+        position: absolute;
+        vertical-align: middle;
+}
+
+.header_text a {
+        text-decoration: none;
+        color:black;
+}
+
+
+
+/* NAVBAR */
+
+nav
+{
+        width: 50%;
+        overflow:hidden;
+        position: absolute;
+        left:50%;
+
+}
+
+nav ul
+{       
+        list-style:none;
+}
+    
+
+nav li a
+{
+        float:left;
+        width:25%;
+        display:block;
+        color:black;
+        text-decoration:none;
+        text-align:center;
+        vertical-align:middle;
+        font-size: 14pt;
+}
+
+nav a:hover, nav a:active
+{
+        color:#33CCCC;
+
+
+
+}
+
+/* ALL PAGES */
+
+.top_bar
+{
+
+        width:100%;
+        height: 1em;
+        background-color: #33CCCC;
+}
+
+.main 
+{
+        background-color: rgba(255, 255, 255, .5);
+        padding-bottom: 1%;
+}
 
 .main ul
 {
@@ -144,32 +156,22 @@ p
 /* HOMEPAGE */
 
 
-
-img.default_pic
+.main img
 {
-        box-shadow:5px 5px 5px #888888;
-        max-width:60%;
-        max-height:60%;
-        border:10px;
-        position: absolute;
-        border-radius: 5px;
+        max-height: 20em;
+        width: auto;
+        padding: 1%;
+        display: block;
+        margin: auto;
+
 }
 
-
-
-
-div.homepage_text
-{
-        padding:40px;
-        text-align:center;
-        margin-left:70%;
-}
 
 /* PORTFOLIO */
 
-
-
-
+#portfolio a:hover {
+        text-decoration: underline;
+}
 
 
 
