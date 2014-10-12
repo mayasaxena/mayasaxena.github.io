@@ -1,0 +1,226 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+@font-face {
+      font-family: 'Arvo';
+      src: url("../fonts/arvo/Arvo-Regular.ttf") format("truetype");
+      font-weight: normal;
+}
+
+
+body
+{
+        font-size:12pt;
+        font-family: 'Gafata', Helvetica, Arial, sans-serif;
+        background-image:url("../images/knitting250px/knitting250px.png");
+
+}
+
+h1 {
+        padding: .5em;
+}
+
+h2
+{
+        text-align: center;
+        padding: 2em;
+}
+
+h3
+{
+        padding: .5em;
+        font-size: 1.2em;
+}
+
+span.bold
+{
+        -webkit-text-stroke: .025em black;
+}
+
+a
+{
+        color: black;
+        text-decoration: none;
+}
+
+p
+{
+        font-weight:normal;
+        margin:20px;
+        font-size: 1em;
+ }
+
+
+
+/* HEADER */
+header
+{       
+        height: 12em;
+        line-height: 12em;
+        width: 100%;
+        position: relative;
+        background-color: #33CCCC;
+}
+
+.header_content {
+        width: 75%;
+        height: 100%;
+        margin:auto;
+        position: relative;
+}
+
+
+.header_text
+{
+        font-family: 'Arvo';
+        font-size: 1.5em;
+        float: left;
+        width: 30%;
+        position: absolute;
+        vertical-align: middle;
+}
+
+.header_text a {
+        text-decoration: none;
+        color:white;
+}
+
+
+
+/* NAVBAR */
+
+nav
+{
+        width: 50%;
+        overflow:hidden;
+        position: absolute;
+        left:50%;
+
+}
+
+nav ul
+{       
+        list-style:none;
+}
+    
+
+nav li a
+{
+        float:left;
+        width:25%;
+        display:block;
+        color:white;
+        text-decoration:none;
+        text-align:center;
+        vertical-align:middle;
+        font-size: 1.2em;
+}
+
+nav a:hover, nav a:active
+{
+        color:black;
+
+
+
+}
+
+/* ALL PAGES */
+
+
+.main 
+{
+        background-color: white;
+        padding:2.5%;
+}
+
+.main ul
+{
+        font-weight:normal;
+        margin:20px;
+        padding-left:10%;
+}
+
+
+/* HOMEPAGE */
+
+
+.main img
+{
+        max-height: 20em;
+        width: 33%;
+        display: block;
+        margin: auto;
+        border-radius: 50%;
+
+}
+
+
+/* PORTFOLIO */
+
+#portfolio a:hover {
+        text-decoration: underline;
+}
+
+#portfolio p {
+        margin: 0;
+        margin-left: 2%;
+        font-size: .9em;
+        max-width: 75%;
+}
+
+
+
+
+
+
+
+
+
