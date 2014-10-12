@@ -33,6 +33,14 @@ body {
 	position: relative;
 }
 
+@media handheld, only screen and (max-width: 800px) {
+    .grid
+    {
+        margin:0;
+    }
+    
+}
+
 .grid:after {
 	content: "";
 	display: table;
