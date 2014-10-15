@@ -14,5 +14,14 @@ $(".navicon").click(function() {
 });
 
 
+$(document).click(function(event) { 
+    if(!$(event.target).is('.navicon')) {
+        if($("nav ul").is(":visible") && $(window).width() < 800) {
+            $("nav ul").slideUp();
+        }
+    }        
+});
+
+
 
 });
