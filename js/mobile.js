@@ -14,7 +14,7 @@ $(".navicon").click(function() {
 });
 
 
-$(document).click(function (event) { 
+$("html").click(function (event) { 
     if(!$(event.target).closest('.navicon').length) {
         if($("nav ul").is(":visible") && $(window).width() < 800) {
             $("nav ul").slideUp();
