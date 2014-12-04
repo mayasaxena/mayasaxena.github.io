@@ -15,9 +15,6 @@
 button();
 
 
-// Remove this line and the tutorial function when you are ready to build your rectangle.
-
-// You can delete the code below, it is just a primer on d3.
 var w;
 var h;
 var c1 = "steelblue";
@@ -43,38 +40,7 @@ var button = svg.append('rect')
   .attr('height', h / 2)
   .attr('fill', "steelblue")
   .attr("id", "0")
-  .on("click", function() {
-    var b = d3.select(".button");
-    var t = d3.select(".text");
-    if (b.attr("id") == "0") {
-        b.attr('x', -w / 6)
-        .attr('y', -h / 6)
-        .attr('width', w / 3)
-        .attr('height', h / 3)
-        .attr('fill', c2)
-        .attr("id", "1");
-
-        t.text("Yes, this");
-    } else if (b.attr("id") == "1") {
-        b.attr('x', -w / 8)
-        .attr('y', -h / 8)
-        .attr('width', w / 4)
-        .attr('height', h / 4)
-        .attr('fill', c3)
-        .attr("id", "2");
-
-        t.text("Click it again!");
-    } else {
-         b.attr('x', -w / 4)
-        .attr('y', -h / 4)
-        .attr('width', w / 2)
-        .attr('height', h / 2)
-        .attr('fill', c1)
-        .attr("id", "0");
-
-        t.text("Click this");
-    }
-  });
+  .on("click", click);
 
 
 svg.append("text").text("Click this")
@@ -84,8 +50,12 @@ svg.append("text").text("Click this")
     .attr('x', 0)
     .attr('y', 0)
     .attr('fill', 'black')
-  .on("click", function() {
-    var b = d3.select(".button");
+  .on("click", click);
+
+}
+
+function click() {
+  var b = d3.select(".button");
     var t = d3.select(".text");
     if (b.attr("id") == "0") {
         b.attr('x', -w / 6)
@@ -115,9 +85,6 @@ svg.append("text").text("Click this")
 
         t.text("Click this");
     }
-  });
-
-
 }
 
 
