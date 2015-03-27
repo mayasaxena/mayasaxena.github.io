@@ -1,0 +1,27 @@
+* {
+    font-family: "Arial";
+    font-size: 1em;
+}
+
+.menu {
+  margin-left: 50px;
+}
+select {
+    height: 200px;
+    width: 100px;
+}
+
+
+.dropdown-check-list {
+
+}
+
+.dropdown-check-list ul.items {
+  width: 200px;
+  padding: 2px;
+  margin: 0;
+  border: 1px solid #ccc;
+}
+.dropdown-check-list ul.items li {
+  list-style: none;
+}
