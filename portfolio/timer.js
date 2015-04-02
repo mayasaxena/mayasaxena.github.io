@@ -68,7 +68,6 @@ function checkAnswers(correctAnswers) {
             localStorage.setItem("errorCount", (parseInt(localStorage.errorCount) + 1));
             
         }
-        localStorage.setItem("runReset", "false");
         location.reload();
         return false;
     } else {
