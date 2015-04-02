@@ -10,7 +10,6 @@ function startClock() {
             form.disabled = false;
         } else {
             for (var i = form.children.length - 1; i >= 0; i--) {
-                console.log(form.children[i].children);
                 for (var j = form.children[i].children.length - 1; j >= 0; j--) {
                     form.children[i].children[j].disabled = false;
                 };
