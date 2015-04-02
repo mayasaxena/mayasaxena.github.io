@@ -53,10 +53,9 @@ function checkAnswers(correctAnswers) {
         values = $('#items').val();
 
     } else if (localStorage.page == 2) {
-        var inputs = $('#items input:checked');
-        for (var i = inputs.length - 1; i >= 0; i--) {
-            values.push(inputs[i].val());
-        };
+        $('#items input:checked').each(function() {
+            values.push($(this).attr('name'));
+        });
     }
 
     console.log(values);
