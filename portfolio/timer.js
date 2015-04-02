@@ -55,7 +55,6 @@ function checkAnswers(correctAnswers) {
     } else if (localStorage.page == 2) {
         $('#items input:checked').each(function() {
             values.push($(this).attr('name'));
-            console.log(this);
         });
     }
 
