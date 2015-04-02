@@ -60,7 +60,7 @@ function checkAnswers(correctAnswers) {
 
     console.log(values);
     console.log(correctAnswers);
-    if(values === correctAnswers) {
+    if(values == correctAnswers) {
         console.log("matched");
     }
 
