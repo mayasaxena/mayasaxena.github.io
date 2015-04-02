@@ -48,6 +48,11 @@ function stopClock(correctAnswers) {
 }
 
 function checkAnswers(correctAnswers) {
-    var values = $('#items').val();
+    var values;
+    if (localStorage.page == 1) {
+        values = $('#items').val();
+    } else if (localStorage.page == 2) {
+        values = $('#items :input').val();
+    }
     console.log(values);
 }
