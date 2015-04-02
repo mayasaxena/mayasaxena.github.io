@@ -60,7 +60,7 @@ function checkAnswers(correctAnswers) {
 
     if (!values.equals(correctAnswers)) {
         alert("Incorrect items chosen");
-        location.setItem("errorCount", (parseInt(localStorage.errorCount) + 1));
+        localStorage.setItem("errorCount", (parseInt(localStorage.errorCount) + 1));
         location.reload();
             
     }
