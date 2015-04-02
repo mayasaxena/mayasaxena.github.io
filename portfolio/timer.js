@@ -61,7 +61,12 @@ function checkAnswers(correctAnswers) {
     if (!values.equals(correctAnswers)) {
         alert("Incorrect items chosen");
         location.reload();
-        location.setItem("errorCount", (parseInt(localStorage.errorCount) + 1))
+        if (localStorage.trial == 1 && localStorage.page == 1) {
+            localStorage.setItem("errorCount", 0);
+        } else {
+            location.setItem("errorCount", (parseInt(localStorage.errorCount) + 1))
+            
+        }
     }
 
 }
