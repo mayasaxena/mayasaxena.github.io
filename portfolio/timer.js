@@ -5,6 +5,17 @@ function startClock() {
     if (clicked === false) {
         clock = setInterval("stopWatch()", 100);
         clicked = true;
+        var form = document.getElementById("items");
+        if (form.disabled) {
+            form.disabled = false;
+        } else {
+            for (var i = form.children.length - 1; i >= 0; i--) {
+                console.log(form.children[i].children);
+                for (var j = form.children[i].children.length - 1; j >= 0; j--) {
+                    form.children[i].children[j].disabled = false;
+                };
+            };
+        }
     }
     else if (clicked === true) {
     }
@@ -15,8 +26,9 @@ function stopWatch() {
 
 }
 
-function stopClock() {
+function stopClock(correctAnswers) {
     window.clearInterval(clock);
+    checkAnswers(correctAnswers);
     localStorage.setItem("Trial " + localStorage.trial + " page " + localStorage.page, Math.round(sec * 10) / 10);
 
     if (localStorage.trial == 8 && localStorage.page == 2) {
@@ -34,4 +46,9 @@ function stopClock() {
         window.location.href = "trial" + localStorage.trial + "p" + localStorage.page + ".html";
     } 
 
+}
+
+function checkAnswers(correctAnswers) {
+    var values = $('#select-meal-type :selected');
+    console.log(values);
 }
