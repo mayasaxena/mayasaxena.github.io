@@ -48,7 +48,7 @@ function stopClock(correctAnswers) {
 }
 
 function checkAnswers(correctAnswers) {
-    var values;
+    var values = [];
     if (localStorage.page == 1) {
         values = $('#items').val();
 
