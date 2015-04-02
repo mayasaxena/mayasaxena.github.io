@@ -58,10 +58,10 @@ function checkAnswers(correctAnswers) {
         });
     }
 
-    console.log(values);
-    console.log(correctAnswers);
-    if(values.equals(correctAnswers)) {
-        console.log("matched");
+    if (!values.equals(correctAnswers)) {
+        alert("Incorrect items chosen");
+        location.reload();
+        location.setItem("errorCount", (parseInt(localStorage.errorCount) + 1))
     }
 
 }
