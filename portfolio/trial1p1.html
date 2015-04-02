@@ -33,8 +33,13 @@
 </div>
 
 <script type="text/javascript">
+    if (localStorage.runReset == "true") {
+        localStorage.setItem("errorCount", 0);
+    }   
     localStorage.setItem("page", 1);
     localStorage.setItem("trial", 1);
+    localStorage.setItem("runReset", "false");
+    
 </script>
 
 
