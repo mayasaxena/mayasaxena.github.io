@@ -49,6 +49,6 @@ function stopClock(correctAnswers) {
 }
 
 function checkAnswers(correctAnswers) {
-    var values = $('#items :selected').val();
+    var values = $('#items').val();
     console.log(values);
 }
