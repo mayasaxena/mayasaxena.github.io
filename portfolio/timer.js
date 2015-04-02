@@ -28,6 +28,7 @@ function stopWatch() {
 function stopClock(correctAnswers) {
     window.clearInterval(clock);
     checkAnswers(correctAnswers);
+
     localStorage.setItem("Trial " + localStorage.trial + " page " + localStorage.page, Math.round(sec * 10) / 10);
 
     if (localStorage.trial == 8 && localStorage.page == 2) {
@@ -68,7 +69,7 @@ function checkAnswers(correctAnswers) {
         }
         localStorage.setItem("runReset", "false");
         location.reload();
-            
+        break;
     }
 
 }
