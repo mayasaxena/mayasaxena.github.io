@@ -27,24 +27,25 @@ function stopWatch() {
 
 function stopClock(correctAnswers) {
     window.clearInterval(clock);
-    checkAnswers(correctAnswers);
+    if (checkAnswers(correctAnswers)) {
 
-    localStorage.setItem("Trial " + localStorage.trial + " page " + localStorage.page, Math.round(sec * 10) / 10);
+        localStorage.setItem("Trial " + localStorage.trial + " page " + localStorage.page, Math.round(sec * 10) / 10);
 
-    if (localStorage.trial == 8 && localStorage.page == 2) {
-        window.location.href = "done.html";
+        if (localStorage.trial == 8 && localStorage.page == 2) {
+            window.location.href = "done.html";
 
-    }  else {
-        if (localStorage.page == 2) {
-            localStorage.setItem("trial", (parseInt(localStorage.trial) + 1));
-            localStorage.setItem("page", 1);
-        } else if (localStorage.page == 1) {
-            localStorage.setItem("page", 2);
-        }
-        sec = 0.0;
-        clicked = false;
-        window.location.href = "trial" + localStorage.trial + "p" + localStorage.page + ".html";
-    } 
+        }  else {
+            if (localStorage.page == 2) {
+                localStorage.setItem("trial", (parseInt(localStorage.trial) + 1));
+                localStorage.setItem("page", 1);
+            } else if (localStorage.page == 1) {
+                localStorage.setItem("page", 2);
+            }
+            sec = 0.0;
+            clicked = false;
+            window.location.href = "trial" + localStorage.trial + "p" + localStorage.page + ".html";
+        } 
+    }
 
 }
 
@@ -69,7 +70,9 @@ function checkAnswers(correctAnswers) {
         }
         localStorage.setItem("runReset", "false");
         location.reload();
-        break;
+        return false;
+    } else {
+        return true;
     }
 
 }
