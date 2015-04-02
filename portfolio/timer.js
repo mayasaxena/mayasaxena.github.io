@@ -52,7 +52,7 @@ function checkAnswers(correctAnswers) {
     if (localStorage.page == 1) {
         values = $('#items').val();
     } else if (localStorage.page == 2) {
-        values = $('#items :input').val();
+        values = $('#items :input');
     }
     console.log(values);
 }
