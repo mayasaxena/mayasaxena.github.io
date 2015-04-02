@@ -62,6 +62,7 @@ function checkAnswers(correctAnswers) {
 
     if (!values.equals(correctAnswers)) {
         alert("Incorrect items chosen");
+        console.log("correctAnswers: " + correctAnswers);
         if (localStorage.getItem("errorCount") == null) {
             localStorage.setItem("errorCount", 1);
         } else {
