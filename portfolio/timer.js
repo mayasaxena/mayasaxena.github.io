@@ -29,21 +29,21 @@ function stopClock(correctAnswers) {
     window.clearInterval(clock);
     if (checkAnswers(correctAnswers)) {
 
-        localStorage.setItem("Trial " + localStorage.trial + " page " + localStorage.page, Math.round(sec * 10) / 10);
+        sessionStorage.setItem("Trial " + sessionStorage.trial + " page " + sessionStorage.page, Math.round(sec * 10) / 10);
 
-        if (localStorage.trial == 8 && localStorage.page == 2) {
+        if (sessionStorage.trial == 8 && sessionStorage.page == 2) {
             window.location.href = "done.html";
 
         }  else {
-            if (localStorage.page == 2) {
-                localStorage.setItem("trial", (parseInt(localStorage.trial) + 1));
-                localStorage.setItem("page", 1);
-            } else if (localStorage.page == 1) {
-                localStorage.setItem("page", 2);
+            if (sessionStorage.page == 2) {
+                sessionStorage.setItem("trial", (parseInt(sessionStorage.trial) + 1));
+                sessionStorage.setItem("page", 1);
+            } else if (sessionStorage.page == 1) {
+                sessionStorage.setItem("page", 2);
             }
             sec = 0.0;
             clicked = false;
-            window.location.href = "trial" + localStorage.trial + "p" + localStorage.page + ".html";
+            window.location.href = "trial" + sessionStorage.trial + "p" + sessionStorage.page + ".html";
         } 
     }
 
@@ -51,10 +51,10 @@ function stopClock(correctAnswers) {
 
 function checkAnswers(correctAnswers) {
     var values = [];
-    if (localStorage.page == 1) {
+    if (sessionStorage.page == 1) {
         values = $('#items').val();
 
-    } else if (localStorage.page == 2) {
+    } else if (sessionStorage.page == 2) {
         $('#items input:checked').each(function() {
             values.push($(this).attr('name'));
         });
@@ -62,12 +62,12 @@ function checkAnswers(correctAnswers) {
 
     if (!values.equals(correctAnswers)) {
         alert("Incorrect items chosen");
-        console.log("answers: " + values);
-        console.log("correctAnswers: " + correctAnswers);
-        if (localStorage.getItem("errorCount") == null) {
-            localStorage.setItem("errorCount", 1);
+        // console.log("answers: " + values);
+        // console.log("correctAnswers: " + correctAnswers);
+        if (sessionStorage.getItem("errorCount") == null) {
+            sessionStorage.setItem("errorCount", 1);
         } else {
-            localStorage.setItem("errorCount", (parseInt(localStorage.errorCount) + 1));
+            sessionStorage.setItem("errorCount", (parseInt(sessionStorage.errorCount) + 1));
             
         }
         location.reload();
@@ -102,3 +102,4 @@ Array.prototype.equals = function (array) {
     }       
     return true;
 }  
+
