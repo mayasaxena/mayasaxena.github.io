@@ -51,8 +51,14 @@ function checkAnswers(correctAnswers) {
     var values;
     if (localStorage.page == 1) {
         values = $('#items').val();
+
     } else if (localStorage.page == 2) {
-        values = $('#items input:checked').html();
+        var inputs = $('#items input:checked');
+        for (var i = inputs.length - 1; i >= 0; i--) {
+            values.push(inputs[i].val());
+        };
     }
+
     console.log(values);
+
 }
